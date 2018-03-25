@@ -1,0 +1,100 @@
+.fy-swiper-item{
+  width:100%;
+  height:600rpx;
+  display: flex;
+  justify-content: center;
+}
+.fy-swiper-item image{
+  width:80%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 15rpx;
+}
+.fy-swiper{
+  width:100%;
+  height:650rpx;
+  background: #fff;
+}
+.fy-goods-title{
+  font-size:14px;
+  padding-left: 20rpx;
+  width:80%;
+  height:90rpx;
+  color:#333;
+  text-overflow:ellipsis;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  border-right: 1rpx solid #f2f2f2;
+
+}
+.fy-goods-head{
+  display: flex;
+  background: #fff;
+}
+.fy-goods-share{
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  width:17%;
+  height:90rpx;
+  font-size:15px;
+}
+button[plain]{
+  border:none;
+  line-height: 1;
+}
+.fy-goods-share::after{
+  border:none;
+}
+.fy-goods-price{
+  height:60rpx;
+  line-height: 60rpx;
+  padding-left: 20rpx;
+  color: #E74C3C;
+  font-size:18px;
+  background: #fff;
+}
+.fy-goods-details{
+  margin-top:10rpx;
+  background: #fff;
+}
+.fy-goods-details image{
+  width: 100%;
+  margin-top:10rpx;
+}
+.fy-goods-details-title{
+  height:60rpx;
+  color:#999;
+  font-size:12px;
+  text-align: center;
+  line-height: 60rpx;
+}
+.fy-goods-shop{
+  position: fixed;
+  height: 100rpx;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  font-size:13px;
+}
+.fy-goods-shopcar{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:100rpx;
+  height:100%;
+  color: #666;
+}
+.fy-goods-shop-buy{
+  width:35%;
+  height: 100%;
+  background: #F7DC6F;
+  text-align: center;
+  line-height: 100rpx;
+}

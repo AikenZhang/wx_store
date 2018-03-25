@@ -1,0 +1,43 @@
+<view>
+  <swiper class='fy-swiper'>
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <view class="fy-swiper-item">
+        <image src="{{item}}" mode="widthFix"/>
+      </view>
+    </swiper-item>
+  </block>
+  </swiper>
+  <view class='fy-goods-head'>
+    <view class='fy-goods-title'>{{title}}</view>
+    <button plain class='fy-goods-share' open-type='share'>
+      <span class="iconfont icon-msnui-share"></span>
+      <span>分享</span>
+    </button>
+  </view>
+  <view class='fy-goods-price'>
+   <span>¥{{price}}</span>
+  </view>
+  <view class='fy-goods-details'>
+    <view class='fy-goods-details-title'>
+        <span>详情</span>
+    </view>
+    <image wx:for="{{detaImgs}}" mode="widthFix" src='{{item.src}}'></image>
+  </view>
+  <view class='fy-goods-shop'>
+      <view style='display:flex;'>
+           <view class='fy-goods-shopcar'>
+            <span class="iconfont icon-gouwuche"></span>
+            <span>购物车</span>
+      </view>
+      <view class='fy-goods-shopcar' bindtap="{{toCollect}}">
+            <span wx:if="{{!_collect}}" class="iconfont icon-xingxing1" style="font-size:19px;"></span>
+            <span wx:if="{{_collect}}" class="iconfont icon-xingxing" style="color:#F7DC6F;font-size:19px;"></span>
+            <span>收藏</span>
+      </view>
+      </view>
+      <view class="fy-goods-shop-buy">
+          <text>加入购物车</text>
+      </view>
+  </view>
+</view>

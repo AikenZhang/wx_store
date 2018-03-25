@@ -1,0 +1,8 @@
+<scroll-view style='height:100%;' enable-back-to-top scroll-y>
+  <view class='fy-kinds'>
+    <view wx:for="{{kinds}}" class='fy-kinds-item'>
+        <span class="iconfont fy-kinds-font {{item.icon}}"></span>
+        <span>{{item.name}}</span>
+    </view>
+  </view>
+</scroll-view>

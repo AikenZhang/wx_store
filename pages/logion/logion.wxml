@@ -1,0 +1,8 @@
+<view class='login'>
+  <view class="login-content">
+    <image mode="aspectFit" src='{{logo}}'></image>
+  </view>
+  <view class='login-content'>
+     <text>{{title}}</text>
+  </view>
+</view>

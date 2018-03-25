@@ -1,0 +1,54 @@
+{
+  "pages":[
+    "pages/shopCar/shopCar",
+    "pages/index/index",
+    "pages/kinds/kinds",
+    "pages/goods/goods",
+    "pages/logion/logion",
+    
+    "pages/logs/logs",
+    "pages/home/home"
+  ],
+  "window":{
+    "navigationBarBackgroundColor": "#333",
+    "navigationBarTextStyle": "#fff",
+    "navigationBarTitleText": "FASHION衣妆",
+    "backgroundColor": "#333",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "color":"#888",
+    "selectedColor": "#000",
+    "backgroundColor":"#f1f2f6",
+    "borderStyle":"white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "selectedIconPath":"resouse/img/home_select.png",
+        "iconPath":"resouse/img/home_default.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "分类",
+        "selectedIconPath": "resouse/img/cf_select.png",
+        "iconPath": "resouse/img/cf_default.png"
+      },
+      {
+        "pagePath": "pages/shopCar/shopCar",
+        "text": "购物车",
+        "selectedIconPath": "resouse/img/shop_select.png",
+        "iconPath": "resouse/img/shop_default.png"
+      },{
+        "pagePath": "pages/logs/logs",
+        "text": "我的",
+        "selectedIconPath": "resouse/img/home_select.png",
+        "iconPath": "resouse/img/home_default.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  }
+}

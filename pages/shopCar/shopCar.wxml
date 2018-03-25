@@ -1,0 +1,22 @@
+<view class="fy-shopCar">
+  <view class="fy-shopCar-head">
+    <span bindtap="editor">编辑</span>
+  </view>
+  <scroll-view class='fy-shopCar-content'>
+    <view></view>
+  </scroll-view> 
+  <view class='fy-shopCar-bottom'>
+    <view class='fy-shopCar-bottom-select'>
+      <span class="iconfont icon-circle2yuanquan"></span>
+      <view>全选</view>
+    </view>
+    <view class='fy-shopCar-bottom-js'>
+        <view class='fy-shopCar-bottom-sum'>
+            ¥{{}}
+        </view>
+        <view class='fy-shopCar-bottom-buy'>
+            生成订单
+        </view>
+    </view>
+  </view>
+</view>

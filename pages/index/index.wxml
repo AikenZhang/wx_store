@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<view class="container">
+  <scroll-view class='goods-scroll' enable-back-to-top scroll-y bindscroll="scroll" bindscrolltolower="loadDate">
+    <view class="goods-container">
+      <view bindtap="naTo" class="img-content" wx:for="{{goods}}">
+        <img-content  goodInfo="{{item.goodInfo}}"></img-content>
+      </view>
+    </view>
+    <view wx:if="{{_loadImg}}" class='goods-loadImg'>
+      <span class="fy-spin iconfont icon-ai244"></span>
+    </view>
+  </scroll-view>
+</view>

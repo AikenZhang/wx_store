@@ -1,0 +1,24 @@
+/* pages/logion/logion.wxss */
+.login{
+  position: absolute;
+  left:0;
+  right: 0;
+  bottom: 0;
+  top:0;
+}
+.login-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height:50%;
+  color: #333;
+}
+.login-content image{
+  width:400rpx;
+  height:400rpx;
+}
+.img image{
+  width:100%;
+  height:100%;
+}

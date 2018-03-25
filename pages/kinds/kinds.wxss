@@ -1,0 +1,37 @@
+.fy-kinds{
+  width:100%;
+  display: flex;
+  flex-flow: wrap;
+}
+.fy-kinds-font{
+  font-size:40px;
+  color: #333;
+}
+.fy-kinds-item{
+  width:50%;
+  height:300rpx;
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color:#666;
+  font-size:16px;
+  position: relative;
+}
+.fy-kinds-item::after{
+  content: " ";
+  position: absolute;
+  height: 100%;
+  right: 0;
+  border-right: 1rpx solid #e2e2e2;
+}
+.fy-kinds-item::before{
+  content: " ";
+  position: absolute;
+  height: 1rpx;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1rpx solid #e2e2e2;
+}
