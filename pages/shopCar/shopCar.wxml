@@ -3,7 +3,10 @@
     <span bindtap="editor">编辑</span>
   </view>
   <scroll-view class='fy-shopCar-content'>
-    <view></view>
+    <view class='fy-shopCar-bottom-select'>
+      <span class="iconfont icon-circle2yuanquan"></span>
+      <view>全选</view>
+    </view>
   </scroll-view> 
   <view class='fy-shopCar-bottom'>
     <view class='fy-shopCar-bottom-select'>
