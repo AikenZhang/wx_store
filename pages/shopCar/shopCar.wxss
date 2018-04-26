@@ -34,16 +34,17 @@
   align-items: center;
   color: #666;
 }
-.fy-shopCar-bottom span{
-  padding:0 15rpx;
-}
 .fy-shopCar-bottom-select{
   justify-content: space-between;
   align-items: center;
   width:150rpx;
 }
+.fy-shopCar-bottom-select span{
+  padding:0 15rpx;
+}
 .fy-shopCar-bottom-order{
   height:100%;
+  align-items: center;
 }
 .fy-shopCar-bottom-sum{
   width:150rpx;
@@ -59,3 +60,9 @@
   text-align: center;
   background: #F7DC6F;
 }
+.price-demo {
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #ff4422;
+    padding: 0 15rpx;
+  }
