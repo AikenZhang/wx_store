@@ -5,7 +5,6 @@
     "pages/kinds/kinds",
     "pages/goods/goods",
     "pages/logion/logion",
-    
     "pages/logs/logs",
     "pages/home/home"
   ],
@@ -29,7 +28,7 @@
         "iconPath":"resouse/img/home_default.png"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/kinds/kinds",
         "text": "分类",
         "selectedIconPath": "resouse/img/cf_select.png",
         "iconPath": "resouse/img/cf_default.png"

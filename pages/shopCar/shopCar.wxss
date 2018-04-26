@@ -37,15 +37,13 @@
 .fy-shopCar-bottom span{
   padding:0 15rpx;
 }
-.fy-shopCar-bottom-select,.fy-shopCar-bottom-js{
-  display: flex;
-  height: 100%;
-}
 .fy-shopCar-bottom-select{
-  display: flex;
   justify-content: space-between;
   align-items: center;
   width:150rpx;
+}
+.fy-shopCar-bottom-order{
+  height:100%;
 }
 .fy-shopCar-bottom-sum{
   width:150rpx;

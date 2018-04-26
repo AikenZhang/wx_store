@@ -1,0 +1,11 @@
+<view class='fy-shopCar-item border-bottom'>
+      <span class="iconfont icon-circle2yuanquan fy-shopCar-item-sel"></span>
+      <image mode="widthFix" src="http://58.87.72.54/img/001.jpeg"></image>
+      <view class='fy-shopCar-item-info'>
+          <view class='fy-shopCar-item-title'>HGYC750966限定樱花刺绣T</view>
+          <view style='display:flex;justify-content:space-between'>
+            <price class="price-demo" icon="sub" value="12"></price>
+            <counter max="{{5}}"></counter>
+          </view>
+      </view>
+</view>

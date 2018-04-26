@@ -19,7 +19,6 @@ Page({
         wx.switchTab({
           url: '../index/index',
         })
-       
       },1500)
   },
 

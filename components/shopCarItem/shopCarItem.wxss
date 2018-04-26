@@ -1,0 +1,47 @@
+@import "../../app.wxss";
+.fy-shopCar-item{
+  display: flex;
+  width:100%;
+  height:300rpx;
+  align-items: center;
+}
+.fy-shopCar-item image{
+  width:270rpx;
+  border-radius: 5rpx;
+}
+.fy-shopCar-item-sel{
+  padding: 0 15rpx;
+}
+.fy-shopCar-item-info{
+  height: 90%;
+  padding: 0 15rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.fy-shopCar-item-title {
+  width:400rpx;
+  font-size:14px;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.price-demo {
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #ff4422;
+}
+.fy-shopCar-delete{
+  width:100%;
+  height:100%;
+  background: #ff4422;
+  color: #fff;
+  font-size:15px;
+  text-align: center;
+  line-height: 300rpx;
+}
+.swiper-item{
+  width:100rpx !important;
+}
