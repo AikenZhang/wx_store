@@ -66,3 +66,13 @@
     color: #ff4422;
     padding: 0 15rpx;
   }
+  .fy-shopCar-bottom-delete{
+    width:100rpx;
+    text-align: center;
+    padding: 5rpx 10rpx;
+    border:1rpx solid #ff4422;
+    border-radius: 4rpx;
+    margin-right: 20rpx;
+    color:#ff4422;
+    font-size:13px;
+  }

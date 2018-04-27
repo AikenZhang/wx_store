@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/goodSort/goodSort",
     "pages/shopCar/shopCar",
     "pages/index/index",
     "pages/kinds/kinds",

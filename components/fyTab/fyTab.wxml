@@ -1,0 +1,3 @@
+<view class='fy-flex fy-tab'>
+  <fy-label wx:for="{{tabs}}" bind:tap="tabChange" data-key="{{item.key}}" wx:key="key" title="{{item.title}}" style='flex:1'></fy-label>
+</view>

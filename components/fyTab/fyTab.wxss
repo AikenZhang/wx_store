@@ -1,0 +1,4 @@
+@import "../../app.wxss";
+.fy-tab{
+  border-bottom:1rpx solid #d2d2d2;
+}

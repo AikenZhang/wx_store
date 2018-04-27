@@ -4,7 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    show:false
   },
 
   /**
@@ -14,6 +14,6 @@ Page({
     
   },
   editor:function(){
-    console.log(234)
+    this.data.show?this.setData({show:false}):this.setData({show:true});
   }
 })

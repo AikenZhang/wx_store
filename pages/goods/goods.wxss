@@ -21,9 +21,6 @@
   width:80%;
   height:90rpx;
   color:#333;
-  text-overflow:ellipsis;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
   border-right: 1rpx solid #f2f2f2;
 
 }

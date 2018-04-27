@@ -86,16 +86,16 @@ Page({
   onPullDownRefresh:function(){
     console.log("sdsd");
   },
-  naTo:function(){
-    console.log("a");
+  naTo:function(e){
+    console.log(e.target)
     wx.navigateTo({
-      url: '../home/home?id=45',
+      url: '../goods/goods?key=',
       success: function (res) { },
       fail: function (res) { },
       complete: function (res) { },
     })
   },
   scroll:function(e){
-    console.log(e)
+    //console.log(e)
   }
 })

@@ -9,7 +9,7 @@
   </block>
   </swiper>
   <view class='fy-goods-head'>
-    <view class='fy-goods-title'>{{title}}</view>
+    <view class='fy-goods-title text-overflow'>{{title}}</view>
     <button plain class='fy-goods-share' open-type='share'>
       <span class="iconfont icon-msnui-share"></span>
       <span>分享</span>

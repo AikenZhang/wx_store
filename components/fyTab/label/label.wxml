@@ -1,0 +1,3 @@
+<view>
+  <view class='fy-tab-label' style='color:{{labelTextActColor}}'>{{title}}</view>
+</view>

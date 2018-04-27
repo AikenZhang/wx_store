@@ -42,6 +42,7 @@ page{
   background: #d2d2d2;
 }
 .text-overflow {
+  -webkit-line-clamp:2;
   text-overflow: ellipsis;
   overflow: hidden;
 }

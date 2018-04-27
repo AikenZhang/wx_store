@@ -11,6 +11,9 @@ Component(
           tag: []
         }
       }
+    },
+    data: {
+      select:false
     }
   }
 )

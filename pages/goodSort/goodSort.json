@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "fy-tab":"../../components/fyTab/fyTab",
+    "img-content": "../../components/imgContent/imgContent"
+  }
+}
