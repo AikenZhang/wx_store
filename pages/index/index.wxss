@@ -2,7 +2,6 @@
 .goods-container{
   display: flex;
   flex-flow: wrap;
-  justify-content: space-around;
 }
 .img-content{
   width:47%;

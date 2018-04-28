@@ -1,3 +1,7 @@
 <view>
    <fy-tab bind:tabChange="tabChange" tabs="{{tabs}}"></fy-tab>
+   <view class='goods-container'>
+       <img-content class="img-content" bindtap="naTo" wx:for="{{goods}}" wx:key="key" goodInfo="{{item}}"></img-content>
+   </view>
+   
 </view>

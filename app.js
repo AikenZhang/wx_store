@@ -1,3 +1,4 @@
+const data=require("./utils/data.js")
 //app.js
 App({
   onLaunch: function () {
@@ -42,6 +43,7 @@ App({
       url: "http://localhost/",
       logo:"http://58.87.72.54/img/fashion.jpg",
       imgerror:"http://58.87.72.54/img/background.jpg"
-    }
+    },
+    imgList: data.imgList
   },
 })

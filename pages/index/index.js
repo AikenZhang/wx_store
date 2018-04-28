@@ -14,57 +14,7 @@ Page({
   },
   onLoad: function () {
       this.setData({
-        goods:[
-          {
-            id:'0000100',
-            src: "http://58.87.72.54/img/001.jpeg",
-            tag: ["长袖", " 时尚"],
-            price: "66.00",
-            start: 3
-          }, {
-            id: '0000101',
-            src: "http://58.87.72.54/img/001.jpeg",
-            tag: ["长袖", " 时尚"],
-            price: "66.00",
-            start: 3
-          }, {
-            id: '0000102',
-            src: "http://58.87.72.54/img/001.jpeg",
-            tag: ["长袖", " 时尚"],
-            price: "66.00",
-            start: 3
-          }, {
-            id: '0000103',
-            src: "http://58.87.72.54/img/001.jpeg",
-            tag: ["长袖", " 时尚"],
-            price: "66.00",
-            start: 3
-          }, {
-            id: '0000104',
-            src: "http://58.87.72.54/img/001.jpeg",
-            tag: ["长袖", " 时尚"],
-            price: "66.00",
-            start: 3
-          }, {
-            id: '0000105',
-            src: "http://58.87.72.54/img/001.jpeg",
-            tag: ["长袖", " 时尚"],
-            price: "66.00",
-            start: 3
-          }, {
-            id: '0000106',
-            src: "http://58.87.72.54/img/001.jpeg",
-            tag: ["长袖", " 时尚"],
-            price: "66.00",
-            start: 3
-          }, {
-            id: '0000107',
-            src: "http://58.87.72.54/img/001.jpeg",
-            tag: ["长袖", " 时尚"],
-            price: "66.00",
-            start: 3
-          }
-        ]
+        goods: app.globalData.imgList
       })
   },
   loadDate:function(){
