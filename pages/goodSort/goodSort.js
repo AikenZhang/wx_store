@@ -7,8 +7,8 @@ Page({
     tabs: [
       { title: '综合',key:"01" },
       { title: '销量', key: '02' },
-      { title: '热度', key: '03' },
-      { title: '价格', key: '04' },
+      { title: '热度', key: '03',sort:true },
+      { title: '价格', key: '04',sort:true},
     ],
     goods: [
       {

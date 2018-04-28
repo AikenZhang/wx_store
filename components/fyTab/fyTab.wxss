@@ -2,3 +2,19 @@
 .fy-tab{
   border-bottom:1rpx solid #d2d2d2;
 }
+.fy-tab-item{
+  font-size:14px;
+  padding:15rpx 0;
+  flex:1;
+  display:flex;
+  justify-content: center;
+}
+.fy-tab-item-jt{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin:0 10rpx;
+}
+.fy-tab-item-jt span{
+  font-size:9px;
+}

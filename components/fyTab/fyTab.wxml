@@ -1,3 +1,11 @@
 <view class='fy-flex fy-tab'>
-  <fy-label wx:for="{{tabs}}" bind:tap="tabChange" data-key="{{item.key}}" wx:key="key" title="{{item.title}}" style='flex:1'></fy-label>
+  <view wx:for="{{tabs}}" bind:tap="tabChange" data-key="{{item.key}}" wx:key="key" title="{{item.title}}" class='fy-tab-item' style='color:{{_tabs.state["fyTab-"+item.key].activeColor}}' >
+    <view>
+      {{item.title}}
+    </view>
+    <view class='fy-tab-item-jt' wx:if="{{item.sort}}">
+      <span class="iconfont icon-jiantoushang1"  style='color:{{_tabs.state["fyTab-"+item.key].sort=="asc"?"":_tabs.defaultColor }}'></span>
+      <span class="iconfont icon-jiantouxia" style='color:{{_tabs.state["fyTab-"+item.key].sort=="desc"?"":_tabs.defaultColor }}'></span>
+    </view>
+  </view>
 </view>
