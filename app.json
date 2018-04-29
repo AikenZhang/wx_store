@@ -11,7 +11,7 @@
     "pages/home/home"
   ],
   "window":{
-    "navigationBarBackgroundColor": "#333",
+    "navigationBarBackgroundColor": "#ed7098",
     "navigationBarTextStyle": "#fff",
     "navigationBarTitleText": "FASHION衣妆",
     "backgroundColor": "#333",
@@ -19,7 +19,7 @@
   },
   "tabBar": {
     "color":"#888",
-    "selectedColor": "#000",
+    "selectedColor": "#ed7098",
     "backgroundColor":"#f1f2f6",
     "borderStyle":"white",
     "list": [
@@ -41,7 +41,7 @@
         "selectedIconPath": "resouse/img/shop_select.png",
         "iconPath": "resouse/img/shop_default.png"
       },{
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/user/user",
         "text": "我的",
         "selectedIconPath": "resouse/img/home_select.png",
         "iconPath": "resouse/img/home_default.png"

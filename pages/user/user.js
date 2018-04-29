@@ -4,6 +4,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    user:{
+      img: "http://58.87.72.54/img/001.jpeg",
+      name:"aikenZhang"
+    }
     
   },
 
@@ -61,5 +65,9 @@ Page({
    */
   onShareAppMessage: function () {
     
+  },
+  //编辑
+  editor: function() {
+    console.log("editor")
   }
 })

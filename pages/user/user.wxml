@@ -1,0 +1,29 @@
+<view>
+   <view class='fy-user-header'>
+      <view class='fy-user-left'>
+        <image mode='widthFix' src="{{user.img}}" class='fy-user-img'></image>
+      </view>
+      <view class='fy-user-right'>
+        <view class='fy-user-name'>{{user.name}}</view>
+        <view class='fy-user-editor' bind:tap="editor">我的资料<span class="iconfont icon-bianji1"></span></view>
+      </view> 
+   </view>
+   <view class='fy-user-order'>
+      <view class='fy-user-order-item'>
+          <i class="iconfont icon-daifukuan"></i>
+          <span>待付款</span>
+      </view>
+      <view class='fy-user-order-item'>
+          <i class="iconfont icon-tubiaolunkuo-"></i>
+          <span>待收货</span>
+      </view>
+      <view class='fy-user-order-item'>
+          <i class="iconfont icon-daipingjia"></i>
+          <span>待评价</span>
+      </view>
+      <view class='fy-user-order-item'>
+          <i class="iconfont icon-quanbudingdan01"></i>
+          <span>全部订单</span>
+      </view>
+   </view>
+</view>

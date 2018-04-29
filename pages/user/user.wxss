@@ -1,0 +1,54 @@
+.fy-user-header{
+  width:100%;
+  height:200rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  margin-bottom:15rpx;
+}
+.fy-user-left{
+  padding: 0 20rpx;
+}
+.fy-user-img{
+  width:160rpx;
+  height: 160rpx;
+  border-radius: 160rpx;
+  overflow: hidden;
+}
+.fy-user-right{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.fy-user-name{
+  font-size:15px;
+  color: #333;
+  padding: 0 0 8rpx 0;
+}
+.fy-user-editor{
+  font-size:13px;
+  color: #666;
+}
+.fy-user-editor span{
+  font-size:13px;
+  padding: 0 10rpx;
+}
+.fy-user-order{
+  width:100%;
+  height:100rpx;
+  background:#fff;
+}
+.fy-user-order{
+  display: flex;
+  align-items: center;
+}
+.fy-user-order-item{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   flex: 1;
+   align-items: center;
+}
+.fy-user-order-item span{
+  font-size:10px;
+}
