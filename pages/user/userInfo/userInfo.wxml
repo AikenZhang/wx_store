@@ -1,0 +1,6 @@
+<view>
+   <fy-cell>
+      <view slot="icon">我的地址</view>
+      <view slot="fyCellType">详细资料</view>
+   </fy-cell>
+</view>
