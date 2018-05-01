@@ -1,0 +1,32 @@
+@import "../../app.wxss";
+.fy-cell{
+  display: flex;
+  height: 85rpx;
+  background: #fff;
+  margin:10rpx 0;
+  justify-content: space-between;
+  align-items: center;
+}
+.fy-cell-icon{
+  padding: 0 15rpx;
+  color:#333;
+  font-size:13px;
+}
+.fy-cell-navto{
+
+  padding: 0 15rpx;
+  color:#333;
+  font-size:13px;
+}
+.fy-cell-navto{
+  display: flex;
+  font-size:14px;
+  color:#666;
+}
+.fy-cell-arrow{
+  padding: 0 15rpx;
+  font-size:13px;
+}
+.fy-cell-arrow span{
+  font-size:12px;
+}

@@ -34,7 +34,7 @@ page{
   color: #666;
 }
 .fy-button-select{
-  background: #ed7098;
+  background: #f981a7;
   color: #fff;
 }
 @keyframes goods-rotate{

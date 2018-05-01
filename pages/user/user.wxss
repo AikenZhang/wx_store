@@ -50,5 +50,5 @@
    align-items: center;
 }
 .fy-user-order-item span{
-  font-size:10px;
+  font-size:13px;
 }

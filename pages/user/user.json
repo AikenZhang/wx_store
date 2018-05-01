@@ -1,1 +1,5 @@
-{}
+{
+  "usingComponents":{
+    "fy-cell": "../../../components/fyCell/fyCell"
+  }
+}

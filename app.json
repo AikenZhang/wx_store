@@ -1,7 +1,8 @@
 {
   "pages":[
-    "pages/user/order/order",
     "pages/user/user",
+    "pages/user/order/order",
+    
     "pages/goodSort/goodSort",
     "pages/shopCar/shopCar",
     "pages/index/index",
@@ -12,7 +13,7 @@
     "pages/home/home"
   ],
   "window":{
-    "navigationBarBackgroundColor": "#ed7098",
+    "navigationBarBackgroundColor": "#f981a7",
     "navigationBarTextStyle": "#fff",
     "navigationBarTitleText": "FASHION衣妆",
     "backgroundColor": "#333",
