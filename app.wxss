@@ -21,6 +21,22 @@ page{
 .fy-flex{
   display: flex;
 }
+.fy-button-default,.fy-button-select{
+  width:200rpx;
+  height:70rpx;
+  text-align: center;
+  line-height: 70rpx;
+  border-radius: 5rpx;
+  font-size:13px;
+}
+.fy-button-default{
+  border:1rpx solid #f2f2f2;
+  color: #666;
+}
+.fy-button-select{
+  background: #ed7098;
+  color: #fff;
+}
 @keyframes goods-rotate{
   0% {
     transform: rotate(0deg)
@@ -42,7 +58,7 @@ page{
   background: #d2d2d2;
 }
 .text-overflow {
-  -webkit-line-clamp:2;
+  white-space:nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }

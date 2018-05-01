@@ -1,0 +1,22 @@
+<view class='fyOrder-list'>
+  <view class='fyOrder-list-header'>
+    <view class='fyOrder-list-tag'>{{order.tag}}</view>
+  </view>
+  <view class='fyOrder-list-content'>
+    <view class='fyOrder-list-info'>
+      <image mode='widthFix' src="{{order.src}}" class='fyOrder-list-info-img'></image>
+      <view class='fyOrder-list-info-text'>
+        <view class="text-overflow fyOrder-list-title">{{order.title}}</view>
+        <view class="fyOrder-Model">尺码: {{order.size}}</view>
+      </view>
+      <view class='fyOrder-list-info-price'>
+        <view class='fyOrder-price'>¥{{order.price}}</view>
+        <view class='fyOrder-count'>x{{order.count}}</view>
+      </view>
+    </view>
+    <view class='fyOrder-list-bbar'>
+      <view class='fy-button-default'>取消订单</view>
+      <view class='fy-button-select'>付款</view>
+    </view>
+  </view>
+</view>
