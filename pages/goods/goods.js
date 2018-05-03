@@ -21,6 +21,7 @@ Page({
         src: "http://58.87.72.54/img/001.jpeg"
       }
     ],
+    goodId:"001203230",
     _collect:true
   },
   onShareAppMessage: function (res) {
@@ -43,6 +44,12 @@ Page({
     }
   },
   share:function(){
-    this.onShareAppMessage("button","")
+  },
+  //显示尺寸选择弹窗
+  modelShow:function(){
+    this.selectComponent("#popUPs").show()
+  },
+  modelClose: function() {
+    this.selectComponent("#popUPs").hide()
   }
 })

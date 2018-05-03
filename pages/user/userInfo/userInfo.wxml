@@ -1,6 +1,8 @@
 <view>
-   <fy-cell>
+   <fy-cell bind:tap="click">
       <view slot="icon">我的地址</view>
       <view slot="fyCellType">详细资料</view>
    </fy-cell>
+   <view style='height:7000rpx'></view>
+   <fy-popUps id="ip"></fy-popUps>
 </view>

@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "fy-cell": "../../../components/fyCell/fyCell"
+    "fy-cell": "../../../components/fyCell/fyCell",
+    "fy-popUps":"../../../components/popUps/popUps"
   }
 }

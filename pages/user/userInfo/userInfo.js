@@ -1,3 +1,4 @@
+const c=getCurrentPages();
 Page({
 
   /**
@@ -61,5 +62,8 @@ Page({
    */
   onShareAppMessage: function () {
     
+  },
+  click:function(){
+    console.log(this.selectComponent("#ip").show())
   }
 })

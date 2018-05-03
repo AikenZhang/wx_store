@@ -1,1 +1,7 @@
-{}
+{
+  "usingComponents":{
+    "price": "../../components/fyPrice/index",
+    "fy-popUps": "../../components/popUps/popUps",
+    "fy-goodsize":"../../components/fyGoodSize/fyGoodSize"
+  }
+}

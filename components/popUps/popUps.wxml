@@ -1,0 +1,3 @@
+<view animation="{{animationData}}" wx:if="{{_show}}" class='fy-popUps' catch:touchmove="touchMove">
+    <slot></slot>
+</view>

@@ -18,24 +18,32 @@
 .fy-goods-title{
   font-size:14px;
   padding-left: 20rpx;
-  width:80%;
-  height:90rpx;
+  width:95%;
+  height:65rpx;
   color:#333;
-  border-right: 1rpx solid #f2f2f2;
 
 }
-.fy-goods-head{
+.fy-goods-item{
   display: flex;
   background: #fff;
+  justify-content: space-between;
+  align-items: center;
+  height: 80rpx;
 }
 .fy-goods-share{
-  display:flex;
-  flex-direction:column;
-  justify-content: center;
-  align-items: center;
-  width:17%;
-  height:90rpx;
-  font-size:15px;
+  display:block;
+  position: fixed;
+  border-radius: 70rpx;
+  line-height: 70rpx;
+  width:70rpx;
+  height:70rpx;
+  font-size:14px;
+  bottom:200rpx;
+  right:20rpx;
+  background: #f981a7;
+  color:#fff;
+  padding:0;
+  margin: 0;
 }
 button[plain]{
   border:none;
@@ -45,12 +53,16 @@ button[plain]{
   border:none;
 }
 .fy-goods-price{
-  height:60rpx;
-  line-height: 60rpx;
   padding-left: 20rpx;
-  color: #E74C3C;
-  font-size:18px;
   background: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff4422;
+}
+.fy-good-id{
+  padding: 0 20rpx;
+  color:#888;
+  font-size:12px;
 }
 .fy-goods-details{
   margin-top:10rpx;
@@ -74,7 +86,7 @@ button[plain]{
   left: 0;
   right: 0;
   background: #fff;
-  z-index: 1000;
+  z-index: 9;
   display: flex;
   justify-content: space-between;
   font-size:13px;

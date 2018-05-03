@@ -8,15 +8,12 @@
     </swiper-item>
   </block>
   </swiper>
-  <view class='fy-goods-head'>
+  <view class='fy-goods-item'>
     <view class='fy-goods-title text-overflow'>{{title}}</view>
-    <button plain class='fy-goods-share' open-type='share'>
-      <span class="iconfont icon-msnui-share"></span>
-      <span>分享</span>
-    </button>
   </view>
-  <view class='fy-goods-price'>
-   <span>¥{{price}}</span>
+  <view class='fy-goods-item'>
+   <price class="fy-goods-price" icon="sup" value="12"></price>
+   <view class='fy-good-id'>编号:{{goodId}}</view>
   </view>
   <view class='fy-goods-details'>
     <view class='fy-goods-details-title'>
@@ -36,8 +33,14 @@
             <span>收藏</span>
       </view>
       </view>
-      <view class="fy-goods-shop-buy">
+      <view class="fy-goods-shop-buy" bind:tap="modelShow">
           <text>加入购物车</text>
       </view>
   </view>
+  <button class='fy-goods-share' open-type="share">
+      <span class="iconfont icon-msnui-share"></span>
+  </button>
+  <fy-popUps id="popUPs">
+      <fy-goodsize bind:close="modelClose"></fy-goodsize>
+  </fy-popUps>
 </view>

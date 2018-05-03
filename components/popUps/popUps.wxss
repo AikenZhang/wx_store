@@ -1,0 +1,11 @@
+.fy-popUps{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  top:0;
+  padding: 0;
+  transition-property: top;
+  transition-duration:1000;
+}
