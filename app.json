@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/logion/logion",
     "pages/goods/goods",
     "pages/user/userInfo/userInfo",
     "pages/user/user",
@@ -8,8 +9,6 @@
     "pages/shopCar/shopCar",
     "pages/index/index",
     "pages/kinds/kinds",
-    "pages/logion/logion",
-    "pages/logs/logs",
     "pages/home/home"
   ],
   "window":{
