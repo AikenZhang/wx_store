@@ -31,6 +31,7 @@ Page({
           wx.getStorage({
             key: 'token',
             success: function(res) {
+              console.log('sfsd')
               me.setData({
                 _login: true
               })
@@ -39,9 +40,6 @@ Page({
                   userInfo: data
                 })
               })
-            },
-            fail: () => {
-              login()
             }
           })
         }
@@ -51,63 +49,18 @@ Page({
   //页面授权
   getUserInfo: (e) => {
     if (e.detail.encryptedData) {
-      //模拟刷新当前页面
-      wx.reLaunch({
-        url: 'user'
+      //登陆
+      wx.showLoading({
+        title: '正在登陆',
+      })
+      login().then(() => {
+        wx.hideLoading()
+        //模拟刷新当前页面
+        wx.reLaunch({
+          url: 'user'
+        })
       })
     }
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    console.log('sdfsd')
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    console.log('sdfsd')
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-  onTabItemTap(item) {
-    console.log(item.index)
-    console.log(item.pagePath)
-    console.log(item.text)
-  },
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
   },
   //编辑
   editor: function () {
