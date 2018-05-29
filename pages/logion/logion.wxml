@@ -1,8 +1,14 @@
 <view class='login'>
+  <!-- <view class='login-mask'>
+    <view class='login-mask-logo'>
+      <image mode='widthFix' src='https://tc.sinaimg.cn/maxwidth.2048/tc.service.weibo.com/06_imgmini_eastday_com/cb7a728b7260dfda10c002bd827e072a.jpeg'></image>
+    </view>
+    <button class='button' open-type="getUserInfo">授权</button>
+  </view> -->
   <view class="login-content">
     <image mode="aspectFit" src='{{logo}}'></image>
   </view>
   <view class='login-content'>
-     <text>{{title}}</text>
+    <text>{{title}}</text>
   </view>
 </view>

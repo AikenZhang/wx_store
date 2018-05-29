@@ -1,5 +1,5 @@
 <view>
-   <view class='fy-user-header'>
+   <view class='fy-user-header' wx:if="{{_login}}">
       <view class='fy-user-left'>
         <image mode='widthFix' src="{{user.img}}" class='fy-user-img'></image>
       </view>
@@ -7,6 +7,9 @@
         <view class='fy-user-name'>{{user.name}}</view>
         <view class='fy-user-editor' bind:tap="editor">我的资料<span class="iconfont icon-bianji1"></span></view>
       </view> 
+   </view>
+   <view class='fy-user-header' wx:if="{{!_login}}">
+       <button class='fy-user-login' open-type='getUserInfo' bindgetuserinfo='getUserInfo'>登录</button>
    </view>
    <view class='fy-user-order'>
       <view class='fy-user-order-item'>

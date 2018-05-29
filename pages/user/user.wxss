@@ -52,3 +52,8 @@
 .fy-user-order-item span{
   font-size:13px;
 }
+.fy-user-login{
+  background:#f981a7;
+  color:#fff;
+  font-size:14px;
+}
