@@ -15,7 +15,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo: null,
+    user: null,
     _login: false
 
   },
@@ -31,13 +31,15 @@ Page({
           wx.getStorage({
             key: 'token',
             success: function(res) {
-              console.log('sfsd')
               me.setData({
                 _login: true
               })
               getUserInfo().then((data) => {
                 me.setData({
-                  userInfo: data
+                  user:{
+                    img: data.imgUrl,
+                    name: data.nickNam
+                  }
                 })
               })
             }

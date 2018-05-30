@@ -1,9 +1,10 @@
 {
   "pages":[
+    "pages/user/user",
     "pages/logion/logion",
     "pages/goods/goods",
     "pages/user/userInfo/userInfo",
-    "pages/user/user",
+    
     "pages/user/order/order",
     "pages/goodSort/goodSort",
     "pages/shopCar/shopCar",
