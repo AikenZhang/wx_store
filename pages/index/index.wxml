@@ -2,7 +2,7 @@
 <view class="container">
   <scroll-view class='goods-scroll' enable-back-to-top scroll-y bindscroll="scroll" bindscrolltolower="loadDate">
     <view class="goods-container">
-       <img-content class="img-content" bindtap="naTo" wx:for="{{goods}}" wx:key="id"  goodInfo="{{item}}"></img-content>
+       <img-content data-id="{{item.id}}" class="img-content" bindtap="naTo" wx:for="{{goods}}" wx:key="{{item.id}}"  goodInfo="{{item}}"></img-content>
     </view>
     <view wx:if="{{_loadImg}}" class='goods-loadImg'>
       <span class="fy-spin iconfont icon-ai244"></span>

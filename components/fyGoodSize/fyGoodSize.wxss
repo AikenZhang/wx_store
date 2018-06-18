@@ -37,7 +37,7 @@
 .fy-goodsize-img image{
   width:80%;
   position: absolute;
-  top:-100rpx;
+  top:-120rpx;
   left: 10%;
   border-radius: 10rpx;
 }
@@ -78,23 +78,6 @@
   padding: 10rpx 20rpx;
   font-size:13px;
   color:#888;
-}
-.fy-goodsize-content-item{
-  overflow: hidden;
-}
-.fy-goodsize-content-item span{
-  display: block;
-  float: left;
-  width:180rpx;
-  height:60rpx;
-  line-height: 60rpx;
-  text-align: center;
-  overflow: hidden;
-  border-radius: 6rpx;
-  font-size:14px;
-  color:#666;
-  border:1rpx solid #d2d2d2;
-  margin:10rpx 20rpx;
 }
 .fy-goodsize-counter{
   height: 80rpx;

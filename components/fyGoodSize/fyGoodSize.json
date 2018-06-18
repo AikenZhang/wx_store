@@ -1,7 +1,8 @@
 {
-  "component":true,
-  "usingComponents":{
-    "price":"../fyPrice/index",
-    "counter":"../counter/index"
+  "component": true,
+  "usingComponents": {
+    "price": "../fyPrice/index",
+    "counter": "../counter/index",
+    "selectCom": "../selectCom/index"
   }
 }

@@ -1,5 +1,17 @@
 //index.js
 //获取应用实例
+const { request } = require('../../utils/MiniPro.js')
+const req = (page) => {
+  return request({
+    url: "product/getprolist",
+    data: {
+      param: {
+        page,
+        pageSize: 10
+      }
+    }
+  })
+}
 const app = getApp()
 Page({
   data: {
@@ -7,45 +19,65 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    goods:[],
-    _startIndex:0,
-    _isLoading:false,
-    _loadImg:true
+    goods: [],
+    _page: 1,
+    _isLoading: true,
+    _loadImg: false
   },
   onLoad: function () {
-      this.setData({
-        goods: app.globalData.imgList
-      })
+    let me = this
+    req(1).then((result) => {
+      if (result && result.code == '0') {
+        let data = result.data
+        me.setData({
+          goods: data
+        })
+      }
+    })
   },
-  loadDate:function(){
-    if(this._isLoading){
-      let data = this.data.goods;
-      data.push({
-        goodInfo: {
-          src: "http://58.87.72.54/img/001.jpeg",
-          tag: ["长袖", " 时尚"],
-          price: "66.00",
-          start: 3
-        }
+  //分页加载
+  loadDate: function () {
+    let me = this
+    let data = this.data
+    if (data._isLoading) {
+      me.setData({
+        _isLoading: false,
+        _loadImg: true
       })
-      this.setData({
-        goods: data
+      let page = data._page + 1
+      me.setData({
+        _page: page
+      })
+      req(page).then((result) => {
+        if (result && result.code == '0') {
+          if (result.data.length > 0) {
+            let goods = data.goods
+            goods.push(...result.data)
+            console.log(goods)
+            me.setData({
+              _isLoading: true,
+              goods: goods
+            })
+          }
+        }
+        me.setData({
+          _loadImg:false
+        })
       })
     }
   },
-  onPullDownRefresh:function(){
+  onPullDownRefresh: function () {
     console.log("sdsd");
   },
-  naTo:function(e){
-    console.log(e.target)
+  naTo: function (e) {
     wx.navigateTo({
-      url: '../goods/goods?key=',
+      url: '../goods/goods?id=' + e.target.dataset.id,
       success: function (res) { },
       fail: function (res) { },
       complete: function (res) { },
     })
   },
-  scroll:function(e){
+  scroll: function (e) {
     //console.log(e)
   }
 })

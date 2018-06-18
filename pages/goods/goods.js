@@ -1,28 +1,9 @@
+const { request } = require('../../utils/MiniPro.js')
+const config = getApp().config
 Page({
   data: {
-    imgUrls: [
-      'http://58.87.72.54/img/001.jpeg',
-      'http://58.87.72.54/img/001.jpeg',
-      'http://58.87.72.54/img/001.jpeg'
-    ],
-    title:"欢迎欢迎dsfsdfsdfsdfsdfsdfwerwerwe rwerwerwerwerwerwerwerwerwerwerwerwererwerwerwerwerwerwrwerwerw",
-    price:"66.00",
-    detaImgs:[
-      {
-        src:"http://58.87.72.54/img/001.jpeg"
-      },
-      {
-        src: "http://58.87.72.54/img/001.jpeg"
-      },
-      {
-        src: "http://58.87.72.54/img/001.jpeg"
-      },
-      {
-        src: "http://58.87.72.54/img/001.jpeg"
-      }
-    ],
-    goodId:"001203230",
-    _collect:true
+    imgPre: config.imgPreSrc,
+    productInfo:[]
   },
   onShareAppMessage: function (res) {
     if (res.from === 'button') {
@@ -43,13 +24,29 @@ Page({
       }
     }
   },
-  share:function(){
+  onLoad(option) {
+    let me = this
+    request({
+      url: "product/getprolist",
+      data: {
+        param:{
+          prodId: option.id
+        }
+      }
+    }).then((result) => {
+      if (result.code == '0') {
+        let data = result.data
+        me.setData({
+          productInfo:data[0]
+        })
+      }
+    })
   },
   //显示尺寸选择弹窗
-  modelShow:function(){
+  modelShow: function () {
     this.selectComponent("#popUPs").show()
   },
-  modelClose: function() {
+  modelClose: function () {
     this.selectComponent("#popUPs").hide()
   }
 })

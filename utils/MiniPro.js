@@ -14,23 +14,35 @@ const request = (option) => {
       },
       data: option.data,
       method: option.method || 'POST',
-      success: (res) => {
+      success (res) {
         if (res.statusCode == 200) {
           resolve(res.data)
-        } else {
-          rej('网络错误')
         }
+      },
+      fail (error) {
+        console.log(error)
+        rej(error)
       }
     })
   }).then((data) => {
     if (data) {
       if (data.code == '111') {
         loginOut()
-        throw new Error('登录过期')
+        //模拟刷新当前页面
+        wx.reLaunch({
+          url: '/pages/user/user'
+        })
+        throw new Error('请登录')
       }
-      //else if (data.code ==) 
+      if (data.code == '-1') {
+        throw new Error(data.errMSg)
+      } 
       return data
     }
+  }).catch((error) => {
+    wx.showToast({
+      title: error.message,
+    })
   })
 }
 //登录逻辑
@@ -46,7 +58,7 @@ const login = () => {
           success : resu => {
             console.log(resu)
             request({
-              url: '/user/login',
+              url: 'user/login',
               data: {
                 code: res.code,
                 userInfo: resu

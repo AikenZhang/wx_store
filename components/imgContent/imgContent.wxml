@@ -1,12 +1,12 @@
 <view class="imgContent">
-    <image src='{{goodInfo.src}}' lazy-load="true" mode='aspectFill'></image>
+    <image src='{{imgPreSrc+goodInfo.files[0].src}}' lazy-load="true" mode='aspectFill'></image>
     <view class="goods-tag">
-        <span class="goods-tag-c" wx:for="{{goodInfo.tag}}">{{item}}</span>
+        <span class="goods-tag-c"  wx:for="{{goodInfo.tag}}" wx:key="{{index}}">{{item}}</span>
     </view>
     <view class="goods-content">
        <span class="goods-price">¥{{goodInfo.price||'**'}}</span>
        <div class="goods-start">
-          <span class="iconfont icon-xingxing" wx:for="{{goodInfo.start||1}}"></span>
+          <span class="iconfont icon-xingxing" wx:for="{{goodInfo.start||1}}" wx:key="{{index}}"></span>
        </div>
     </view>
 </view>

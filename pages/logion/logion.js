@@ -1,14 +1,11 @@
 // pages/logion/logion.js
+const config = getApp().config
 Page({
-  /**
-   * 项目配置
-   */
-  globalData: getApp().globalData,
   /**
    * 页面的初始数据
    */
   data: {
-    logo: getApp().globalData.config.logo,
+    logo:config.logo,
     title:"欢迎进入FASHION衣妆"
   },
   /**

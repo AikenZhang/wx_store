@@ -3,10 +3,10 @@
   <view class='fy-main'>
       <view class='fy-goodsize-head'>
           <view class='fy-goodsize-img'>
-              <image mode='widthFix' src='{{goodInfo.src}}'></image>
+              <image mode='widthFix' src='{{imgPre + goodInfo.files[0].src}}'></image>
           </view>
           <view class='fy-goodsize-price'>
-              <price icon="sup"  value="{{goodInfo.price}}"></price>
+              <price icon="sup"  value="{{goodInfo.price}}" decimal="2"></price>
               <span>请选择: 颜色 尺码</span>
           </view>
           <view class='fy-goodsize-close' bind:tap="close">
@@ -15,26 +15,14 @@
        </view>
       <scroll-view class='fy-goodsize-content'>
           <view class='.fy-goodsize-content-title'>颜色</view>
-          <view class='fy-goodsize-content-item'>
-              <span>粉色佩奇</span>
-              <span>粉色佩奇</span>
-              <span>粉色佩奇</span>
-              <span>粉色佩奇</span>
-              <span>粉色佩奇</span>
-          </view>
+          <selectCom content="{{goodInfo.color}}" bind:select="selectColor"></selectCom>
           <view class='.fy-goodsize-content-title'>尺寸</view>
-          <view class='fy-goodsize-content-item'>
-              <span>L</span>
-              <span>S</span>
-              <span>M</span>
-              <span>XL</span>
-              <span>XXL</span>
-          </view>
+          <selectCom content="{{goodInfo.size}}" bind:select="selectSize"></selectCom>
           <view class='.fy-goodsize-content-title'>数量</view>
           <view class='fy-goodsize-counter'>
-              <counter></counter>
+              <counter max="{{maxCount}}" bind:changenumber="selectCount"></counter>
           </view>
       </scroll-view>      
-      <view class='fy-goodsize-button'>确定</view>
+      <view class='fy-goodsize-button' data-id="{{goodInfo.id}}" bind:tap="selected">确定</view>
   </view> 
 </view>

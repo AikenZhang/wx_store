@@ -1,25 +1,26 @@
 <view>
   <swiper class='fy-swiper'>
-  <block wx:for="{{imgUrls}}">
+  <block wx:for="{{productInfo.files}}" wx:key="{{item.id}}">
     <swiper-item>
       <view class="fy-swiper-item">
-        <image src="{{item}}" mode="widthFix"/>
+        <image src="{{imgPre + item.src}}" mode="widthFix"/>
       </view>
     </swiper-item>
   </block>
   </swiper>
   <view class='fy-goods-item'>
-    <view class='fy-goods-title text-overflow'>{{title}}</view>
+    <view class='fy-goods-title text-overflow'>{{productInfo.title}}</view>
   </view>
   <view class='fy-goods-item'>
-   <price class="fy-goods-price" icon="sup" value="12"></price>
-   <view class='fy-good-id'>编号:{{goodId}}</view>
+   <price class="fy-goods-price" icon="sup" value="{{productInfo.price}}"></price>
+   <view class='fy-good-id'>编号:{{productInfo.id}}</view>
   </view>
   <view class='fy-goods-details'>
     <view class='fy-goods-details-title'>
         <span>详情</span>
     </view>
-    <image wx:for="{{detaImgs}}" mode="widthFix" src='{{item.src}}'></image>
+    <view class="fy-goods-introduction">{{productInfo.introduction}}</view>
+    <image wx:for="{{productInfo.files}}" wx:key="{{item.id}}" mode="widthFix" src='{{imgPre + item.src}}'></image>
   </view>
   <view class='fy-goods-shop'>
       <view style='display:flex;'>
@@ -41,6 +42,6 @@
       <span class="iconfont icon-msnui-share"></span>
   </button>
   <fy-popUps id="popUPs">
-      <fy-goodsize bind:close="modelClose"></fy-goodsize>
+      <fy-goodsize bind:close="modelClose" goodInfo="{{productInfo}}" imgPre="{{imgPre}}" maxCount="{{productInfo.count}}"></fy-goodsize>
   </fy-popUps>
 </view>

@@ -1,0 +1,3 @@
+<view class='fy-selectCom' bind:tap="select" id="slectCom">
+  <span wx:for="{{selectContent}}" id="{{item.key}}" class="{{item.class}}" data-key="{{item.key}}" wx:key="{{item.key}}">{{item.value}}</span>
+</view>

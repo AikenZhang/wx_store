@@ -75,9 +75,10 @@ button[plain]{
 .fy-goods-details-title{
   height:60rpx;
   color:#999;
-  font-size:12px;
+  font-size:10px;
   text-align: center;
   line-height: 60rpx;
+  border-bottom: 10rpx solid #f6f6f6;
 }
 .fy-goods-shop{
   position: fixed;
@@ -106,4 +107,10 @@ button[plain]{
   background: #F7DC6F;
   text-align: center;
   line-height: 100rpx;
+}
+.fy-goods-introduction{
+  padding: 0 10rpx;
+  line-height: 28px;
+  color:#666;
+  font-size:14px;
 }
