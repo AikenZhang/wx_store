@@ -3,7 +3,7 @@
   <view class='fy-main'>
       <view class='fy-goodsize-head'>
           <view class='fy-goodsize-img'>
-              <image mode='widthFix' src='{{imgPre + goodInfo.files[0].src}}'></image>
+              <image mode='widthFix' src='{{imgPre+goodInfo.files[0].src}}'></image>
           </view>
           <view class='fy-goodsize-price'>
               <price icon="sup"  value="{{goodInfo.price}}" decimal="2"></price>

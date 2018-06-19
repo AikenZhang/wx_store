@@ -41,7 +41,7 @@ const request = (option) => {
     }
   }).catch((error) => {
     wx.showToast({
-      title: error.message,
+      title: error.message.toString(),
     })
   })
 }
@@ -58,7 +58,7 @@ const login = () => {
           success : resu => {
             console.log(resu)
             request({
-              url: 'user/login',
+              url: 'wx/user/login',
               data: {
                 code: res.code,
                 userInfo: resu

@@ -3,7 +3,7 @@ const { login, request } = require('../../utils/MiniPro.js')
 //获取用户详细信息
 const getUserInfo = () => {
   return request({
-    url: 'user/getuserinfo'
+    url: 'wx/user/getuserinfo'
   }).then((res) => {
     if (res.code == '0') {
       return res.data
