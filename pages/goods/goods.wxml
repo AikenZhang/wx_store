@@ -41,7 +41,6 @@
   <button class='fy-goods-share' open-type="share">
       <span class="iconfont icon-msnui-share"></span>
   </button>
-  <fy-popUps id="popUPs">
-      <fy-goodsize bind:close="modelClose" goodInfo="{{productInfo}}" imgPre="{{imgPre}}" maxCount="{{productInfo.count}}"></fy-goodsize>
+  <fy-popUps goodInfo="{{productInfo}}" imgPre="{{imgPre}}" maxCount="{{productInfo.count}}" id="popUPs">
   </fy-popUps>
 </view>

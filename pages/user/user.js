@@ -5,7 +5,7 @@ const getUserInfo = () => {
   return request({
     url: 'wx/user/getuserinfo'
   }).then((res) => {
-    if (res.code == '0') {
+    if (res && res.code == '0') {
       return res.data
     }
   })
@@ -35,12 +35,14 @@ Page({
                 _login: true
               })
               getUserInfo().then((data) => {
-                me.setData({
-                  user:{
-                    img: data.imgUrl,
-                    name: data.nickNam
-                  }
-                })
+                if (data) {
+                  me.setData({
+                    user: {
+                      img: data.imgUrl,
+                      name: data.nickNam
+                    }
+                  })
+                }
               })
             }
           })

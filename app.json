@@ -1,5 +1,7 @@
 {
   "pages":[
+        "pages/index/index",
+    "pages/leftSlide/leftSlide",
     "pages/user/user",
     "pages/logion/logion",
     "pages/goods/goods",
@@ -8,7 +10,7 @@
     "pages/user/order/order",
     "pages/goodSort/goodSort",
     "pages/shopCar/shopCar",
-    "pages/index/index",
+
     "pages/kinds/kinds",
     "pages/home/home"
   ],

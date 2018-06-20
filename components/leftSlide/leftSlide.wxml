@@ -1,0 +1,20 @@
+<!--pages/leftSlide/leftSlide.wxml-->
+<view class="item-wrapper">
+  <view class="item-list" bindtap="itemDelete" wx:for="{{itemData}}" wx:for-item="item" wx:for-index="index" wx:key="that" data-id="{{item.id}}">
+    <view class="item-info" data-index="{{index}}" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style="left:{{item.left + 'rpx'}}">
+      <span class="iconfont icon-circle2yuanquan fy-shopCar-item-sel"></span>
+      <span class="iconfont icon-duigou1" style="color:#ff4422"></span>
+      <image mode="widthFix" src="http://58.87.72.54/img/001.jpeg"></image>
+      <view class='fy-shopCar-item-info'>
+        <view class='fy-shopCar-item-title text-overflow'>HGYC750966限定樱花刺绣T限定樱花刺绣T限定樱花刺绣T限定樱花刺绣T</view>
+        <view style='display:flex;justify-content:space-between'>
+          <price class="price-demo" icon="sub" value="12"></price>
+          <counter max="{{5}}"></counter>
+        </view>
+      </view>
+    </view>
+    <view class="item-oper">
+      <view class="oper-delete" data-key="delete" data-index="{{index}}">删除</view>
+    </view>
+  </view>
+</view>

@@ -9,3 +9,88 @@
   transition-property: top;
   transition-duration:1000;
 }
+.fy-goodsize{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.fy-mask{
+  position: absolute;
+  left: 0;
+  top:0;
+  bottom: 0;
+  right: 0;
+  z-index: 9;
+  background: #000;
+  opacity: 0.3;
+}
+.fy-main{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff;
+  height: 70%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 99;
+}
+.fy-goodsize-head{
+  display: flex;
+  height:200rpx;
+}
+.fy-goodsize-img{
+  width:300rpx;
+  height:200rpx;
+  position: relative;
+}
+.fy-goodsize-img image{
+  width:80%;
+  position: absolute;
+  top:-120rpx;
+  left: 10%;
+  border-radius: 10rpx;
+}
+.fy-goodsize-price{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+.fy-goodsize-close{
+  font-size:17px;
+  color:#666;
+  padding: 20rpx;
+}
+.fy-goodsize-price price{
+  font-size:18px;
+  color:#ff4444;
+}
+.fy-goodsize-price span{
+  padding: 15rpx 0;
+  font-size:13px;
+  font-weight: 500;
+  color: #888;
+}
+.fy-goodsize-content{
+  flex: 1;
+  background: #F7F9F9;
+}
+.fy-goodsize-button{
+  height:80rpx;
+  background: #f981a7;
+  text-align: center;
+  line-height: 80rpx;
+  color: #fff;
+  font-size:14px;
+}
+.fy-goodsize-content-title{
+  padding: 10rpx 20rpx;
+  font-size:13px;
+  color:#888;
+}
+.fy-goodsize-counter{
+  height: 80rpx;
+  padding: 0 20rpx;
+}

@@ -1,4 +1,5 @@
 const config =  require('./appConfig.js')
+const { touch } = require('./utils/util.js')
 App({
   onLaunch: function () {
 
@@ -11,5 +12,6 @@ App({
      */
   },
   //系统 配置
-  config
+  config,
+  touch
 })

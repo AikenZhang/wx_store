@@ -1,24 +1,4 @@
-const formatTime = date => {
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const hour = date.getHours()
-  const minute = date.getMinutes()
-  const second = date.getSeconds()
-
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
-}
-
-const formatNumber = n => {
-  n = n.toString()
-  return n[1] ? n : '0' + n
-}
-
 class Touches {
-  constructor() {
-
-  }
-
   _getIndex(e) {  // 获取滑动列表的下标值
     return e.currentTarget.dataset.index
   }
@@ -75,7 +55,38 @@ class Touches {
     return dataList
   }
 }
-module.exports = {
-  formatTime: formatTime,
-  touch:new Touches()
-}
+const touch = new Touches()
+Component({
+  properties: {
+    itemData: {
+      type: Object,
+      value:[
+        {}
+      ]
+    }
+  },
+  methods: {
+    touchS: function (e) {  // touchstart
+      let startX = touch.getClientX(e)
+      startX && this.setData({ startX })
+    },
+    touchM: function (e) {  // touchmove
+      let itemData = touch.touchM(e, this.data.itemData, this.data.startX)
+      itemData && this.setData({ itemData })
+
+    },
+    touchE: function (e) {  // touchend
+      const width = 150  // 定义操作列表宽度
+      let itemData = touch.touchE(e, this.data.itemData, this.data.startX, width)
+      itemData && this.setData({ itemData })
+    },
+    itemDelete: function (e) {  // itemDelete
+      if (e.target.dataset.key == 'delete') {
+        let itemData = touch.deleteItem(e, this.data.itemData)
+        itemData && this.setData({ itemData })
+        this.triggerEvent("delete", e.currntarget.dataset.id)
+      }
+    }
+  }
+ 
+})

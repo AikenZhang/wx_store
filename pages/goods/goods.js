@@ -45,8 +45,5 @@ Page({
   //显示尺寸选择弹窗
   modelShow: function () {
     this.selectComponent("#popUPs").show()
-  },
-  modelClose: function () {
-    this.selectComponent("#popUPs").hide()
   }
 })

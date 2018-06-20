@@ -2,7 +2,8 @@ Component(
   {
     properties: {
       content: {
-        type: Array
+        type: Array,
+        default:[]
       }
     },
     data: {
@@ -32,16 +33,21 @@ Component(
     ready () {
        let content =  this.data.content
        let selContent = []
-       for (let i=0;i<content.length;i++){
-         selContent.push({
-           class:'',
-           key:content[i]['key'],
-           value:content[i]['value']
+       setTimeout(() => {
+         for (let i = 0; i < content.length; i++) {
+           selContent.push({
+             class: '',
+             key: content[i]['key'],
+             value: content[i]['value']
+           })
+         }
+         this.setData({
+           selectContent: selContent
          })
-       }
-       this.setData({
-         selectContent: selContent
-       })
+        console.log('1111')
+       },100)
+       
+
     }
   }
 )

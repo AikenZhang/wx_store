@@ -1,24 +1,4 @@
-const formatTime = date => {
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const hour = date.getHours()
-  const minute = date.getMinutes()
-  const second = date.getSeconds()
-
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
-}
-
-const formatNumber = n => {
-  n = n.toString()
-  return n[1] ? n : '0' + n
-}
-
-class Touches {
-  constructor() {
-
-  }
-
+module.exports = class Touches {
   _getIndex(e) {  // 获取滑动列表的下标值
     return e.currentTarget.dataset.index
   }
@@ -74,8 +54,4 @@ class Touches {
     dataList.splice(this._getIndex(e), 1)
     return dataList
   }
-}
-module.exports = {
-  formatTime: formatTime,
-  touch:new Touches()
 }
