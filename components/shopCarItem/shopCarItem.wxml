@@ -1,12 +1,13 @@
-<view class='fy-shopCar-item border-bottom'>
-      <span class="iconfont icon-circle2yuanquan fy-shopCar-item-sel"></span>
-      <span class="iconfont icon-duigou1" style="color:#ff4422"></span>
-      <image mode="widthFix" src="http://58.87.72.54/img/001.jpeg"></image>
-      <view class='fy-shopCar-item-info'>
-          <view class='fy-shopCar-item-title text-overflow'>HGYC750966限定樱花刺绣T限定樱花刺绣T限定樱花刺绣T限定樱花刺绣T</view>
-          <view style='display:flex;justify-content:space-between'>
-            <price class="price-demo" icon="sub" value="12"></price>
-            <counter max="{{5}}"></counter>
-          </view>
+<view class='fy-shopCar-item'>
+  <slide-del style="height:100%;width:100%;" binddelete="del">
+    <span  class=" fy-shopCar-item-sel iconfont {{_editorClass}}"  bindtap="select"></span>
+    <image mode="widthFix" src="{{src}}"></image>
+    <view class='fy-shopCar-item-info'>
+      <view class='fy-shopCar-item-title text-overflow'>{{title}}</view>
+      <view style='display:flex;justify-content:space-between'>
+        <price class="price-demo" icon="sub" value="{{price}}"></price>
+        <counter max="{{maxCount}}" number="{{count}}"></counter>
       </view>
+    </view>
+  </slide-del>
 </view>

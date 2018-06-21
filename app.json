@@ -1,6 +1,6 @@
 {
   "pages":[
-        "pages/index/index",
+    "pages/index/index",
     "pages/leftSlide/leftSlide",
     "pages/user/user",
     "pages/logion/logion",

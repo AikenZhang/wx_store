@@ -1,92 +1,99 @@
-class Touches {
-  _getIndex(e) {  // 获取滑动列表的下标值
-    return e.currentTarget.dataset.index
-  }
+// components/slide-delete/slide-delete.js
+const winW = wx.getSystemInfoSync().screenWidth; // 屏幕宽度
+const ratio = 750 / winW //px && rpx 单位转换 (乘于 这个属性是 px 转换成 rpx)
 
-  _getMoveX(e, startX) {  // 获取滑动过程中滑动的距离
-    return this.getClientX(e) - startX
-  }
-
-  _getEndX(e, startX) {  // 获取滑动结束滑动的距离
-    let touch = e.changedTouches
-    if (touch.length === 1) {
-      return touch[0].clientX - startX
-    }
-  }
-
-  _resetData(dataList) {  // 重置数据， 把所有的列表 left 置为 0
-    for (let i in dataList) {
-      dataList[i].left = 0
-    }
-    return dataList
-  }
-
-  getClientX(e) {  // 获取滑动的横坐标
-    let touch = e.touches
-    if (touch.length === 1) {
-      return touch[0].clientX
-    }
-  }
-
-  touchM(e, dataList, startX) {  // touchmove 过程中更新列表数据
-    let list = this._resetData(dataList)
-    list[this._getIndex(e)].left = this._getMoveX(e, startX)
-    return list
-  }
-
-  touchE(e, dataList, startX, width) {  // touchend 更新列表数据
-    let list = this._resetData(dataList)
-    let disX = this._getEndX(e, startX)
-    let left = 0
-
-    if (disX < 0) {  // 判断滑动方向， （向左滑动）
-      // 滑动的距离大于删除宽度的一半就显示操作列表 否则不显示
-      Math.abs(disX) > width / 2 ? left = -width : left = 0
-    } else {  // 向右滑动复位
-      left = 0
-    }
-
-    list[this._getIndex(e)].left = left
-    return list
-  }
-
-  deleteItem(e, dataList) {  // 删除功能
-    dataList.splice(this._getIndex(e), 1)
-    return dataList
-  }
-}
-const touch = new Touches()
 Component({
+  // 组件外的样式
+  externalClasses: ['del-class', 'like-class'],
+
+  // 组件的属性列表
   properties: {
-    itemData: {
-      type: Object,
-      value:[
-        {}
-      ]
+    // 是否显示喜欢按钮
+    like: {           // 属性名
+      type: Boolean,  // 类型（必填）,String, Number, Boolean, Object, Array, null（表示任意类型）
+      value: false  // 属性初始值（可选），如果未指定则会根据类型选择一个
     }
   },
-  methods: {
-    touchS: function (e) {  // touchstart
-      let startX = touch.getClientX(e)
-      startX && this.setData({ startX })
-    },
-    touchM: function (e) {  // touchmove
-      let itemData = touch.touchM(e, this.data.itemData, this.data.startX)
-      itemData && this.setData({ itemData })
 
+  // 组件的初始数据
+  data: {
+    offset: 0, // 内容区域滑动的位移
+    start: 0,  // 手指触屏的开始位置
+    move: 0,   // 手指移动的位置
+    btnWidth: 140,  // 按钮的宽度 
+    lock: false,   // 限制模块右滑
+    now: 0         //为标记滑动位置设置的变量
+  },
+
+  // 组件的方法列表
+  methods: {
+    // 手指开始滑动
+    handstart(e) {
+      var that = this;
+      that.data.start = e.changedTouches[0].clientX
     },
-    touchE: function (e) {  // touchend
-      const width = 150  // 定义操作列表宽度
-      let itemData = touch.touchE(e, this.data.itemData, this.data.startX, width)
-      itemData && this.setData({ itemData })
-    },
-    itemDelete: function (e) {  // itemDelete
-      if (e.target.dataset.key == 'delete') {
-        let itemData = touch.deleteItem(e, this.data.itemData)
-        itemData && this.setData({ itemData })
-        this.triggerEvent("delete", e.currntarget.dataset.id)
+    // 手指滑动过程
+    handmove(e) {
+      var that = this;
+      var offset = that.data.offset
+      var start = that.data.start
+      var width = that.data.btnWidth
+      var lock = that.data.lock
+      var move = that.data.move = e.changedTouches[0].clientX
+      if ( (move-start) < -100) {
+        if (move - start > -width) {
+          that.setData({
+            start: start,
+            move: move,
+            offset: that.data.now == 0 ? (move - start) * ratio : (move - start) * ratio - width
+          })
+        }
       }
-    }
+      else if (lock ) {
+        if (move-start < width){
+          that.setData({
+            start: start,
+            move: move,
+            offset: that.data.now == 0 ? (move - start) * ratio : (move - start) * ratio - width
+          })
+        }
+      }
+    },
+    // 手指结束滑动，然后抬起
+    handend(e) {
+      var that = this;
+      var width = that.data.btnWidth
+      if (that.data.offset < 0) {
+        if (that.properties.like) {
+          width = 160
+        }
+        that.setData({
+          btnWidth: width,
+          offset: -width
+        })
+        that.data.lock = true
+      } else {
+        that.setData({
+          offset: 0
+        })
+        that.data.lock = false
+        that.data.now = 0
+      }
+    },
+
+    // 删除
+    _del() {
+      this.triggerEvent('delete') //触发删除回调
+      this.setData({              //为了让模块内容部分滑动到原点
+        offset: 0
+      })
+    },
+    // 喜欢
+    _like() {
+      this.triggerEvent('like') //触发删除回调
+      this.setData({              //为了让模块内容部分滑动到原点
+        offset: 0
+      })
+    },
   }
- 
 })

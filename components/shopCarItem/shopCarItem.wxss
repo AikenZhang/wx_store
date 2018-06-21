@@ -1,4 +1,43 @@
 @import "../../app.wxss";
+.slide{
+    width: 100%;
+    min-height: 180rpx;
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    background: #ffffff;
+}
+.slide-btn{
+    width: 100%;
+    font-size: 28rpx;
+    color: #ffffff;
+    background: #ffffff;
+    display: flex; 
+    flex-direction: row-reverse;
+}
+.slide-btn view{
+    width: 140rpx;
+    height: 100%;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+.slide-btn view:nth-child(1){
+    background: #ff4549;
+}
+.slide-btn view:nth-child(2){
+    background: #FF8407;
+}
+.slide-cont{
+    width: 100%;
+    min-height: 180rpx;
+    display: flex;
+    background: #ffffff;
+    position: absolute;
+    z-index: 1;
+    transition: all 200ms ease-out;
+    border-bottom:1px solid #f00;
+}
 .fy-shopCar-item{
   display: flex;
   width:100%;
@@ -11,6 +50,7 @@
 }
 .fy-shopCar-item-sel{
   padding: 0 15rpx;
+  color:#ff4422;
 }
 .fy-shopCar-item-info{
   height: 90%;
