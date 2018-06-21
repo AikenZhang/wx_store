@@ -45,12 +45,13 @@
   align-items: center;
 }
 .fy-shopCar-item image{
-  width:270rpx;
+  width:180rpx;
   border-radius: 5rpx;
 }
 .fy-shopCar-item-sel{
   padding: 0 15rpx;
   color:#ff4422;
+  line-height:300rpx;
 }
 .fy-shopCar-item-info{
   height: 90%;
@@ -72,4 +73,14 @@
     font-size: 36rpx;
     font-weight: bold;
     color: #ff4422;
+}
+.fy-shopCar-type {
+  color:#666;
+  height:130rpx;
+  font-size:12px;
+}
+.fy-slide {
+  height:300rpx;
+  width:100%;
+  margin-bottom: 10rpx;
 }

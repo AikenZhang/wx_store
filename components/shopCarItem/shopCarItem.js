@@ -10,62 +10,61 @@ Component(
         type:Number,
         value:0
       },
-      src: {
-        type:String,
-        value:config.imgError
-      },
-      price:{
-        type:Number,
-        value:0
-      },
-      title:{
-        type:String
-      },
-      select:{
-        type:String,
-        value:'0'
-      },
-      id: {
+      goodsInfo:{
+        type:Object
+      }, 
+      key: {
         type:String,
         value:'34'
       }
     },
     data: {
-      _editorClass: 'icon-duigou1', // icon-circle2yuanquan
-      select:false
+      _editorClass: 'icon-circle2yuanquan', //  icon-duigou1
+      select:false,
+      _count:0,
+      _select:'0'
+    },
+    ready() {
+      this.setData({
+        _count:this.data.count
+      })
     },
     methods: {
       //选中事件
       select (e) {
           let edClass = this.data._editorClass
+          
           if (edClass == 'icon-duigou1') {
              this.selectDom(false)
+             
           }else{
             this.selectDom(true)
+            
           }
       },
       selectDom (b) {
+          let data = this.data
           if (!b) {
             this.setData({
-              _editorClass: 'icon-circle2yuanquan'
-            })
-            this.triggerEvent('select', {
-              id: this.data.id,
-              but: '0'
+              _editorClass: 'icon-circle2yuanquan',
+              _select:'0'
             })
           }else {
             this.setData({
-              _editorClass: 'icon-duigou1'
-            })
-            this.triggerEvent('select', {
-              id: this.data.id,
-              but: '1'
+              _editorClass: 'icon-duigou1',
+              _select: '1'
             })
           }
       },
       //删除操作
       del () {
         this.triggerEvent('delete',this.data.id)
+      },
+      //数量
+      numberChange (e) {
+        this.setData({
+          _count:e.detail.number
+        })
       }
     }
   }
