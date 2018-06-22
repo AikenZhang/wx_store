@@ -6,69 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    goodInfo: [{
-      price: 1000,
-      maxCount: 12,
-      title: "夏日三家套",
-      id: '2342342423',
-      count: 3
-    }, {
-      price: 1000,
-      maxCount: 12,
-      title: "夏日三家34套",
-      id: '2342342433423',
-      count: 3
-    }, {
-      price: 1000,
-      maxCount: 12,
-      title: "夏日三家34套",
-      id: '2342342433423',
-      count: 3
-    }, {
-      price: 1000,
-      maxCount: 12,
-      title: "夏日三家34套",
-      id: '2342342433423',
-      count: 3
-    }, {
-      price: 1000,
-      maxCount: 12,
-      title: "夏日三家34套",
-      id: '2342342433423',
-      count: 3
-    }, {
-      price: 1000,
-      maxCount: 12,
-      title: "夏日三家34套",
-      id: '2342342433423',
-      count: 3
-    }, {
-      price: 1000,
-      maxCount: 12,
-      title: "夏日三家34套",
-      id: '2342342433423',
-      count: 3
-    }, {
-      price: 1000,
-      maxCount: 12,
-      title: "夏日三家34套",
-      id: '2342342433423',
-      count: 3
-    }, {
-      price: 1000,
-      maxCount: 12,
-      title: "夏日三家34套",
-      id: '2342342433423',
-      count: 3
-    }],
-    _editorClass: 'icon-circle2yuanquan', //  icon-duigou1
-    info: {
-      title:'33',
-      color:"2",
-      types:'33',
-      price:120,
-      src: config.imgPreSrc +'46c8eca0-7216-11e8-aa92-459b3731610c.jpg'
-    }
+    goodInfo: [],
+    _editorClass: 'icon-circle2yuanquan'//  icon-duigou1
   },
   /**
    * 生命周期函数--监听页面加载
@@ -76,7 +15,7 @@ Page({
   onLoad: function (options) {
     let me =this
       request({
-        url:'product/getshopcarlist'
+        url:'product/product/getshopCar'
       }).then((result) => {
         console.log(result)
           if (result && result.code == '0') {
@@ -134,7 +73,7 @@ Page({
       }
     }
     request({
-      url: 'product/getshopcarlist',
+      url: 'product/order/add',
       data: {
         param:JSON.stringify(temp)
       }

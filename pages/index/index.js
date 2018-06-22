@@ -3,7 +3,7 @@
 const { request } = require('../../utils/MiniPro.js')
 const req = (page) => {
   return request({
-    url: "product/getprolist",
+    url: "product/product/getprolist",
     data: {
       param: {
         page,

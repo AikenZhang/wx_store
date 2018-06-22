@@ -19,6 +19,7 @@ Component(
       }
     },
     data: {
+      _imgPre: config.imgPreSrc,
       _editorClass: 'icon-circle2yuanquan', //  icon-duigou1
       select:false,
       _count:0,

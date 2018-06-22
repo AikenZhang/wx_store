@@ -27,7 +27,7 @@ Page({
   onLoad(option) {
     let me = this
     request({
-      url: "product/getprolist",
+      url: "product/product/getprolist",
       data: {
         param:{
           prodId: option.id

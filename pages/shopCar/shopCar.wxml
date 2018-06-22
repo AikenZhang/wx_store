@@ -3,7 +3,7 @@
     <span bindtap="editor" bind:tap="editor"></span>
   </view> -->
   <scroll-view scroll-y class='fy-shopCar-content'>
-     <shopcar-item wx:for="{{goodInfo}}" wx:key="{{item.id}}" class="fy-shopCaritem" binddelete="del" bindselect='itemselect' maxCount="{{item.maxCount}}"  key="{{item.id}}" count="{{item.count}}" id="fy_shopItem_{{index}}" goodsInfo="{{info}}" ></shopcar-item>
+     <shopcar-item wx:for="{{goodInfo}}" wx:key="{{item.id}}" class="fy-shopCaritem" binddelete="del" bindselect='itemselect' maxCount="{{item.maxCount}}"  key="{{item.id}}" count="{{item.count}}" id="fy_shopItem_{{index}}" goodsInfo="{{item}}" ></shopcar-item>
   </scroll-view>
   <view class='fy-shopCar-bottom' wx:if="{{show}}">
     <view class='fy-shopCar-bottom-select fy-flex'>

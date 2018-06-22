@@ -2,10 +2,10 @@
   <slide-del style="height:100%;width:100%;" binddelete="del">
   <view class='fy-shopCar-item'>
     <span  class=" fy-shopCar-item-sel iconfont {{_editorClass}}"  bindtap="select"></span>
-    <image mode="widthFix" src="{{goodsInfo.src}}"></image>
+    <image mode="widthFix" src="{{_imgPre + goodsInfo.src}}"></image>
     <view class='fy-shopCar-item-info'>
       <view class='fy-shopCar-item-title text-overflow'>{{goodsInfo.title}}</view>
-      <view class='fy-shopCar-type'>颜色:{{goodsInfo.color +" 尺寸:" + goodsInfo.types}}</view>
+      <view class='fy-shopCar-type'>颜色:{{goodsInfo.color +"  尺寸:" + goodsInfo.size}}</view>
       <view style='display:flex;justify-content:space-between'>
         <price class="price-demo" icon="sub" value="{{goodsInfo.price}}"></price>
         <counter max="{{maxCount}}" number="{{count}}" bind:changenumber="numberChange"></counter>
