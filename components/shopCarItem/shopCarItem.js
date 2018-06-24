@@ -2,20 +2,14 @@ const config = getApp().config;
 Component(
   {
     properties: {
-      maxCount: {
-        type:Number,
-        value:10
-      },
       count:{
-        type:Number,
-        value:0
+        type:Number
       },
       goodsInfo:{
         type:Object
       }, 
       key: {
-        type:String,
-        value:'34'
+        type:String
       }
     },
     data: {
@@ -23,25 +17,26 @@ Component(
       _editorClass: 'icon-circle2yuanquan', //  icon-duigou1
       select:false,
       _count:0,
-      _select:'0'
+      _select:'0',
+      sum:0
     },
     ready() {
       this.setData({
-        _count:this.data.count
+        _count:this.data.count,
+        sum: (parseInt(this.data.goodsInfo.count)* parseInt(this.data.goodsInfo.price))
       })
     },
     methods: {
       //选中事件
       select (e) {
           let edClass = this.data._editorClass
-          
           if (edClass == 'icon-duigou1') {
              this.selectDom(false)
              
           }else{
             this.selectDom(true)
-            
           }
+          this.triggerEvent('select', this.data.key)
       },
       selectDom (b) {
           let data = this.data
@@ -59,12 +54,17 @@ Component(
       },
       //删除操作
       del () {
-        this.triggerEvent('delete',this.data.id)
+        this.triggerEvent('delete',this.data.key)
       },
       //数量
       numberChange (e) {
         this.setData({
-          _count:e.detail.number
+          _count:e.detail.number,
+          sum: parseInt(this.data.goodsInfo.price) * e.detail.number
+        })
+        this.triggerEvent('numberChange',{
+          target:e,
+          shopCarItem:this
         })
       }
     }

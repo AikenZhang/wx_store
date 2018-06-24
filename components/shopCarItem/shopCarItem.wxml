@@ -7,8 +7,8 @@
       <view class='fy-shopCar-item-title text-overflow'>{{goodsInfo.title}}</view>
       <view class='fy-shopCar-type'>颜色:{{goodsInfo.color +"  尺寸:" + goodsInfo.size}}</view>
       <view style='display:flex;justify-content:space-between'>
-        <price class="price-demo" icon="sub" value="{{goodsInfo.price}}"></price>
-        <counter max="{{maxCount}}" number="{{count}}" bind:changenumber="numberChange"></counter>
+        <price class="price-demo" icon="sub" decimal="2" value="{{goodsInfo.price}}"></price>
+        <counter max="{{10}}" number="{{count}}" bind:changenumber="numberChange"></counter>
       </view>
     </view>
     </view>

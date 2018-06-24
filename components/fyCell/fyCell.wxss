@@ -1,7 +1,7 @@
 @import "../../app.wxss";
 .fy-cell{
   display: flex;
-  height: 85rpx;
+  min-height: 85rpx;
   background: #fff;
   margin:10rpx 0;
   justify-content: space-between;

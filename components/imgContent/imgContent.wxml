@@ -3,6 +3,9 @@
     <view class="goods-tag">
         <span class="goods-tag-c"  wx:for="{{goodInfo.tag}}" wx:key="{{index}}">{{item}}</span>
     </view>
+    <view class='goods-title'>
+        {{goodInfo.title}}
+    </view>
     <view class="goods-content">
        <span class="goods-price">¥{{goodInfo.price||'**'}}</span>
        <div class="goods-start">

@@ -8,6 +8,7 @@
           <view class='fy-goodsize-price'>
               <price icon="sup"  value="{{goodInfo.price}}" decimal="2"></price>
               <span>请选择: 颜色 尺码</span>
+              <span wx:if="{{goodInfo.count <= 0}}" style="color:#ff4444;font-size:12px;" >库存不足</span>
           </view>
           <view class='fy-goodsize-close' bind:tap="close">
               <span>X</span>

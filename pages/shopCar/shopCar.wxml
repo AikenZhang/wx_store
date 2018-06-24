@@ -3,7 +3,7 @@
     <span bindtap="editor" bind:tap="editor"></span>
   </view> -->
   <scroll-view scroll-y class='fy-shopCar-content'>
-     <shopcar-item wx:for="{{goodInfo}}" wx:key="{{item.id}}" class="fy-shopCaritem" binddelete="del" bindselect='itemselect' maxCount="{{item.maxCount}}"  key="{{item.id}}" count="{{item.count}}" id="fy_shopItem_{{index}}" goodsInfo="{{item}}" ></shopcar-item>
+     <shopcar-item wx:for="{{goodInfo}}" wx:key="{{item.id}}" class="fy-shopCaritem" binddelete="del" bindselect='itemselect' key="{{item.id}}" count="{{item.count}}" id="fy_shopItem_{{index}}" goodsInfo="{{item}}" bind:numberChange="numberChange" ></shopcar-item>
   </scroll-view>
   <view class='fy-shopCar-bottom' wx:if="{{show}}">
     <view class='fy-shopCar-bottom-select fy-flex'>
@@ -18,7 +18,7 @@
       <view>全选</view>
     </view>
     <view class='fy-shopCar-bottom-order fy-flex'>
-        <price class="price-demo" decimal="small" value="{{10000}}"></price>
+        <price class="price-demo" value="{{sum}}" icon="sub" decimal="2">0</price>
         <view class='fy-shopCar-bottom-buy' bind:tap="order">
             生成订单
         </view>

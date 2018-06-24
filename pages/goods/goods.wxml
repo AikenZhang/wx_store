@@ -1,45 +1,45 @@
 <view>
   <swiper class='fy-swiper'>
-  <block wx:for="{{productInfo.files}}" wx:key="{{item.id}}">
-    <swiper-item>
-      <view class="fy-swiper-item">
-        <image src="{{imgPre + item.src}}" mode="widthFix"/>
-      </view>
-    </swiper-item>
-  </block>
+    <block wx:for="{{productInfo.files}}" wx:key="{{item.id}}">
+      <swiper-item>
+        <view class="fy-swiper-item">
+          <image src="{{imgPre + item.src}}" mode="widthFix" />
+        </view>
+      </swiper-item>
+    </block>
   </swiper>
   <view class='fy-goods-item'>
     <view class='fy-goods-title text-overflow'>{{productInfo.title}}</view>
   </view>
   <view class='fy-goods-item'>
-   <price class="fy-goods-price" icon="sup" value="{{productInfo.price}}"></price>
-   <view class='fy-good-id'>编号:{{productInfo.id}}</view>
+    <price class="fy-goods-price" icon="sup" value="{{productInfo.price}}"></price>
+    <view class='fy-good-id'>编号:{{productInfo.id}}</view>
   </view>
   <view class='fy-goods-details'>
     <view class='fy-goods-details-title'>
-        <span>详情</span>
+      <span>详情</span>
     </view>
     <view class="fy-goods-introduction">{{productInfo.introduction}}</view>
     <image wx:for="{{productInfo.files}}" wx:key="{{item.id}}" mode="widthFix" src='{{imgPre + item.src}}'></image>
   </view>
   <view class='fy-goods-shop'>
-      <view style='display:flex;'>
-           <view class='fy-goods-shopcar'>
-            <span class="iconfont icon-gouwuche"></span>
-            <span>购物车</span>
+    <view style='display:flex;'>
+      <view class='fy-goods-shopcar' bind:tap="toShopCar">
+        <span class="iconfont icon-gouwuche"></span>
+        <span>购物车</span>
       </view>
-      <view class='fy-goods-shopcar' bindtap="{{toCollect}}">
-            <span wx:if="{{!_collect}}" class="iconfont icon-xingxing1" style="font-size:19px;"></span>
-            <span wx:if="{{_collect}}" class="iconfont icon-xingxing" style="color:#F7DC6F;font-size:19px;"></span>
-            <span>收藏</span>
+      <view class='fy-goods-shopcar' bind:tap="toCollect">
+        <span wx:if="{{!_collect}}" class="iconfont icon-xingxing1" style="font-size:19px;"></span>
+        <span wx:if="{{_collect}}" class="iconfont icon-xingxing" style="color:#F7DC6F;font-size:19px;"></span>
+        <span>收藏</span>
       </view>
-      </view>
-      <view class="fy-goods-shop-buy" bind:tap="modelShow">
-          <text>加入购物车</text>
-      </view>
+    </view>
+    <view class="fy-goods-shop-buy" bind:tap="modelShow">
+      <text>加入购物车</text>
+    </view>
   </view>
   <button class='fy-goods-share' open-type="share">
-      <span class="iconfont icon-msnui-share"></span>
+    <span class="iconfont icon-msnui-share"></span>
   </button>
   <fy-popUps goodInfo="{{productInfo}}" imgPre="{{imgPre}}" maxCount="{{productInfo.count}}" id="popUPs">
   </fy-popUps>

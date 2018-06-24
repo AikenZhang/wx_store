@@ -1,9 +1,12 @@
 const { request } = require('../../utils/MiniPro.js')
 const config = getApp().config
+//商品id
+let prodId = ''
 Page({
   data: {
     imgPre: config.imgPreSrc,
-    productInfo:[]
+    productInfo:[],
+    _collect:false
   },
   onShareAppMessage: function (res) {
     if (res.from === 'button') {
@@ -26,11 +29,13 @@ Page({
   },
   onLoad(option) {
     let me = this
+    prodId = option.id
+    //获取产品信息
     request({
       url: "product/product/getprolist",
       data: {
         param:{
-          prodId: option.id
+          prodId: prodId
         }
       }
     }).then((result) => {
@@ -41,9 +46,56 @@ Page({
         })
       }
     })
+    //获取收藏信息
+    request({
+      url:"product/product/getCollect",
+      data:{
+        param:JSON.stringify({
+          id:prodId
+        })
+      }
+    }).then((result) => {
+       if (result && result.code == '0' && result.data == '1') {
+         me.setData({
+           _collect:true
+         })
+       }
+    })
   },
   //显示尺寸选择弹窗
   modelShow: function () {
     this.selectComponent("#popUPs").show()
+  },
+  //跳转购物车
+  toShopCar () {
+    wx.switchTab({
+      url:'/pages/shopCar/shopCar'
+    })
+  },
+  toCollect () {
+    let me = this
+    let collect = this.data._collect
+    //操作状态  0 取消收藏 1 添加收藏
+    let code = '0'
+    if (!collect) {
+      code = '1'
+    }else{
+      code = '0'
+    }
+    request({
+      url:'product/product/updateCollect',
+      data:{
+        param:JSON.stringify({
+          id:prodId,
+          code
+        })
+      }
+    }).then((result) => {
+      if (result && result.code == '0') {
+        me.setData({
+          _collect: !collect
+        })
+      }
+    })
   }
 })

@@ -1,0 +1,50 @@
+<!--pages/confirmOrder/index.wxml-->
+<view>
+  <view class="fy-cell" bind:tap="selectInfo">
+    <view class="fy-cell-icon">
+      <span class="iconfont icon-jiantouyou"></span>
+    </view>
+    <view class='fy-cell-navto'>
+      <view style="width:100%;">
+        <view class='fy-cell-title'>{{defaultAddress.name+ " "+defaultAddress.tel}}</view>
+        <view class='text-overflow fy-cell-content'>{{defaultAddress.address}}</view>
+      </view>
+      <view class='fy-cell-arrow'>
+        <span class="iconfont icon-jiantouyou"></span>
+      </view>
+    </view>
+  </view>
+  <view class='fy-order'>
+    <view class='fy-order-sum'>
+      <view style='color:#888;font-size:15px;'>订单总价</view>
+      <view style=''>¥ {{sum}}</view>
+    </view>
+    <view class='fy-order-content'>
+      <view class='fy-order-item' wx:for="{{goodInfo}}" wx:key="{{{index}}">
+        <view class='fy-order-item-title text-overflow'>{{item.title}}</view>
+        <view class='fy-order-item-info'>{{" X "+item.count+" 颜色: "+item.color+" 尺寸: " +item.size+ " ¥ "+item.price}}</view>
+      </view>
+    </view>
+    <view class='fy-order-but'>
+      <view bind:tap="submit">提交订单</view>
+    </view>
+  </view>
+  <popup id="popup" animation-mode="bottom" align="bottom">
+    <view class='fy-popup-info'>
+      <view class="fy-cell" bind:tap="selectInfo" wx:for="{{addressArr}}" wx:key="{{item.id}}" style='margin-bottom:10rpx;'>
+        <view class="fy-cell-icon">
+          <span class="iconfont icon-jiantouyou"></span>
+        </view>
+        <view class='fy-cell-navto' data-key="{{item.id}}" bind:tap="selectAddress">
+          <view style="width:100%;">
+            <view class='fy-cell-title'>{{item.name+ " "+item.tel}}</view>
+            <view class='text-overflow fy-cell-content'>{{item.address}}</view>
+          </view>
+          <view class='fy-cell-arrow'>
+            <span class="iconfont icon-jiantouyou"></span>
+          </view>
+        </view>
+      </view>
+    </view>
+  </popup>
+</view>

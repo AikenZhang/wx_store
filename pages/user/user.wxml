@@ -20,10 +20,10 @@
           <i class="iconfont icon-tubiaolunkuo-"></i>
           <span>待收货</span>
       </view>
-      <view class='fy-user-order-item'>
+      <!-- <view class='fy-user-order-item'>
           <i class="iconfont icon-daipingjia"></i>
           <span>待评价</span>
-      </view>
+      </view> -->
       <view class='fy-user-order-item'>
           <i class="iconfont icon-quanbudingdan01"></i>
           <span>全部订单</span>

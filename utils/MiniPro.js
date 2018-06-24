@@ -5,7 +5,6 @@ const getToken = () => {
 //请求数据
 const request = (option) => {
   return new Promise((resolve, rej) => {
-    console.log(appConfig)
     wx.request({
       url: appConfig.baseUrl + option.url,
       header: {
@@ -35,7 +34,7 @@ const request = (option) => {
         throw new Error('请登录')
       }
       if (data.code == '-1') {
-        throw new Error(data.errMSg)
+        throw new Error(data.errMsg)
       } 
       return data
     }

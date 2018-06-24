@@ -44,7 +44,6 @@ Component(
          this.setData({
            selectContent: selContent
          })
-        console.log('1111')
        },100)
        
 

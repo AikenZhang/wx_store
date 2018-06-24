@@ -85,22 +85,31 @@ Component({
       let count = me.data.selCount
       let color = me.data.selColor
       let title = me.data.goodInfo.title
-      request({
-        url: 'product/product/addshopcar',
-        data: {
-          param: JSON.stringify({
-            id,
-            size,
-            color,
-            count,
-            title,
-            price: me.data.goodInfo.price,
-            src: me.data.goodInfo.files[0].src
-          })
-        }
-      }).then(() => {
-         me.hide()
-      })
+      if (size && count && color) {
+        request({
+          url: 'product/product/addshopcar',
+          data: {
+            param: JSON.stringify({
+              id,
+              size,
+              color,
+              count,
+              title,
+              price: me.data.goodInfo.price,
+              src: me.data.goodInfo.files[0].src
+            })
+          }
+        }).then(() => {
+          me.hide()
+        })
+      }else{
+        wx.showModal({
+          title: '提示',
+          content: '请选择全信息',
+          showCancel:false
+        })
+      }
+      
     }
   }
 })
