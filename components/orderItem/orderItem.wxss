@@ -1,0 +1,54 @@
+.fy-order {
+  width:100%;
+  height:320rpx;
+  background: #fff;
+  margin-bottom: 10rpx;
+}
+.fy-order-title{
+  width:95%;
+  height:50rpx;
+  line-height:50rpx;
+  border-bottom: 1rpx solid #f2f2f2;
+  margin:0 auto;
+  font-size:13px;
+  color:#666;
+}
+.fy-order-img {
+  width:95%;
+  height:200rpx;
+  display: flex;
+  align-items: center;
+  border-bottom:1rpx solid #f2f2f2;
+  margin:0 auto;
+}
+.fy-order-content {
+  height: 90%;
+  color:#888;
+  font-size:12px;
+  margin:0 20rpx;
+  display: flex;
+  justify-content: space-around;
+  flex-direction:column;
+}
+.fy-order-img image {
+  width:130rpx;
+  margin:0 10rpx;
+  border-radius: 5rpx;
+}
+.fy-order-but {
+  width:95%;
+  display: flex;
+  flex-direction:row-reverse;
+  align-items: center;
+  height:70rpx;
+}
+.fy-order-but-item {
+  color:#f981a7;
+  font-size:11px;
+  height:40rpx;
+  text-align: center;
+  line-height:40rpx;
+  border:1rpx solid #f981a7;
+  border-radius: 10rpx;
+  padding:0 15rpx;
+}

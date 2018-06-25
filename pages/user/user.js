@@ -69,5 +69,15 @@ Page({
   //编辑
   editor: function () {
     console.log("editor")
+  },
+  getOrder (e) {
+    let mode = e.target.dataset.mode
+    console.log(e)
+    wx.navigateTo({
+      url: '/pages/order/index?mode='+mode,
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
   }
 })

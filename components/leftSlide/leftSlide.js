@@ -4,7 +4,7 @@ const ratio = 750 / winW //px && rpx 单位转换 (乘于 这个属性是 px 转
 
 Component({
   // 组件外的样式
-  externalClasses: ['del-class', 'like-class'],
+  externalClasses: ['del-class', 'like-class','slide-class'],
 
   // 组件的属性列表
   properties: {
@@ -12,6 +12,11 @@ Component({
     like: {           // 属性名
       type: Boolean,  // 类型（必填）,String, Number, Boolean, Object, Array, null（表示任意类型）
       value: false  // 属性初始值（可选），如果未指定则会根据类型选择一个
+    },
+    //是否启用
+    enable:{
+      type:Boolean,
+      value:true
     }
   },
 
@@ -21,7 +26,7 @@ Component({
     start: 0,  // 手指触屏的开始位置
     move: 0,   // 手指移动的位置
     btnWidth: 140,  // 按钮的宽度 
-    lock: false,   // 限制模块右滑
+    lock: false,
     now: 0         //为标记滑动位置设置的变量
   },
 
@@ -40,7 +45,7 @@ Component({
       var width = that.data.btnWidth
       var lock = that.data.lock
       var move = that.data.move = e.changedTouches[0].clientX
-      if ( (move-start) < -100) {
+      if ((move - start) < -100 && this.data.enable) {
         if (move - start > -width) {
           that.setData({
             start: start,

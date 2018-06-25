@@ -1,3 +1,18 @@
-<view class='fy-order'>
-  <view></view>
-</view>
+<slide-del slide-class="fy-order" bind:delete="del" enable="{{mode == '1'}}">
+  <view class="fy-order">
+    <view class='fy-order-title'>{{orderInfo.title}}</view>
+    <view class='fy-order-img'>
+      <image mode='widthFix' src="{{imgPre + orderInfo.src}}"></image>
+      <view class='fy-order-content'>
+        <view>颜色:{{orderInfo.color}} 尺寸: {{orderInfo.size}}</view>
+        <view>X {{orderInfo.count}} </view>
+        <price style="color:#ff4444;font-weight:800;font-size:15px;" icon="sub" decimal="2" value="{{orderInfo.price}}"></price>
+      </view>
+    </view>
+    <view class='fy-order-but'>
+      <view class='fy-order-but-item' bind:tap="pay" wx:if="{{mode == '1'}}">去支付</view>
+       <view class='fy-order-but-item' bind:tap="pay" wx:if="{{mode=='2'}}" >确认收货</view>
+    </view>
+  </view>
+
+</slide-del>

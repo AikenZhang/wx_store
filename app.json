@@ -2,16 +2,15 @@
   "pages":[
     
     "pages/index/index",
-    "pages/leftSlide/leftSlide",
+    "pages/order/index",
+    "pages/user/order/order",
     "pages/user/user",
     "pages/logion/logion",
     "pages/goods/goods",
     "pages/user/userInfo/userInfo",
     "pages/confirmOrder/index",
-    "pages/user/order/order",
     "pages/goodSort/goodSort",
     "pages/shopCar/shopCar",
-    "pages/payMent/index",
     "pages/kinds/kinds",
     "pages/home/home"
   ],

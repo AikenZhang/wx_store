@@ -12,11 +12,11 @@
        <button class='fy-user-login' open-type='getUserInfo' bindgetuserinfo='getUserInfo'>登录</button>
    </view>
    <view class='fy-user-order'>
-      <view class='fy-user-order-item'>
+      <view class='fy-user-order-item' data-mode='{{1}}' bind:tap="getOrder">
           <i class="iconfont icon-daifukuan"></i>
           <span>待付款</span>
       </view>
-      <view class='fy-user-order-item'>
+      <view class='fy-user-order-item' data-mode='{{2}}' bind:tap="getOrder">
           <i class="iconfont icon-tubiaolunkuo-"></i>
           <span>待收货</span>
       </view>
@@ -24,7 +24,7 @@
           <i class="iconfont icon-daipingjia"></i>
           <span>待评价</span>
       </view> -->
-      <view class='fy-user-order-item'>
+      <view class='fy-user-order-item' data-mode='{{3}}' bind:tap="getOrder">
           <i class="iconfont icon-quanbudingdan01"></i>
           <span>全部订单</span>
       </view>
