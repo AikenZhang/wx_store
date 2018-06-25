@@ -71,7 +71,7 @@ Page({
     console.log("editor")
   },
   getOrder (e) {
-    let mode = e.target.dataset.mode
+    let mode = e.currentTarget.dataset.mode
     console.log(e)
     wx.navigateTo({
       url: '/pages/order/index?mode='+mode,
@@ -79,5 +79,5 @@ Page({
       fail: function (res) { },
       complete: function (res) { },
     })
-  }
+  },
 })

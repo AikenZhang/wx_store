@@ -1,3 +1,3 @@
 <view class='fy-order'>
- <order-item class="fy-order-item" wx:for="{{orderInfo}}" wx:key="{{item._id}}" orderInfo="{{item}}" bind:but="pay" bind:delete = "del"></order-item>
+ <order-item class="fy-order-item" wx:for="{{orderInfo}}" wx:key="{{item._id}}" orderInfo="{{item}}" bind:but="but" bind:delete = "del" data-id="{{item._id}}" mode="{{mode}}"></order-item>
 </view>
