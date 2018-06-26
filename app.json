@@ -1,15 +1,14 @@
 {
   "pages":[
-    
+        "pages/goodSort/goodSort",
     "pages/index/index",
     "pages/order/index",
-    "pages/user/order/order",
     "pages/user/user",
     "pages/logion/logion",
     "pages/goods/goods",
     "pages/user/userInfo/userInfo",
     "pages/confirmOrder/index",
-    "pages/goodSort/goodSort",
+
     "pages/shopCar/shopCar",
     "pages/kinds/kinds",
     "pages/home/home"

@@ -1,1 +1,25 @@
 /* pages/order/index.wxss */
+.fy-order-pay {
+  width:85%;
+  background: #fff;
+  margin:0 auto;
+}
+.fy-order-pay-item {
+  width:90%;
+  height:100rpx;
+  border-bottom:1rpx solid #f2f2f2;
+  font-size:12px;
+  color:#666;
+  margin:0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+}
+.fy-order-pay-img {
+  width:65%;
+   margin:0 auto;
+}
+.fy-order-pay-img image {
+  width:100%;
+}

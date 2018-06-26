@@ -2,10 +2,11 @@
   width:100%;
   display: flex;
   flex-flow: wrap;
+  background: #fff;
 }
 .fy-kinds-font{
   font-size:40px;
-  color: #333;
+  color: #f981a7;
 }
 .fy-kinds-item{
   width:50%;
@@ -13,7 +14,7 @@
   display: flex;
   flex-flow: wrap;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   color:#666;
   font-size:16px;

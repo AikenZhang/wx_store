@@ -10,8 +10,9 @@
       </view>
     </view>
     <view class='fy-order-but'>
-      <view class='fy-order-but-item' bind:tap="but" wx:if="{{mode == '1'}}">去支付</view>
-       <view class='fy-order-but-item' bind:tap="but" wx:if="{{mode=='2'}}" >确认收货</view>
+      <view class='fy-order-but-item' bind:tap="but" data-mode="1" wx:if="{{mode == '1'}}">去支付</view>
+      <view class='fy-order-but-item' bind:tap="but" data-mode="2" wx:if="{{mode=='2'}}" >确认收货</view>
+      <view class='fy-order-but-item fy-order-ok' data-mode="3" bind:tap="but" wx:if="{{mode=='3'}}" >已完成</view>
     </view>
   </view>
 

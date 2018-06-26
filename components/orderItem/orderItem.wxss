@@ -52,3 +52,7 @@
   border-radius: 10rpx;
   padding:0 15rpx;
 }
+.fy-order-ok{
+  color:#666;
+  border:0;
+}

@@ -72,7 +72,6 @@ Page({
   },
   getOrder (e) {
     let mode = e.currentTarget.dataset.mode
-    console.log(e)
     wx.navigateTo({
       url: '/pages/order/index?mode='+mode,
       success: function (res) { },

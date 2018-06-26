@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "order-item": "../../components/orderItem/orderItem"
+    "order-item": "../../components/orderItem/orderItem",
+    "popup":"../../components/popUp/index"
   }
 }
