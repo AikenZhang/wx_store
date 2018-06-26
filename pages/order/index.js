@@ -1,4 +1,3 @@
-// pages/order/index.js
 const { request } = require('../../utils/MiniPro.js')
 const config = getApp().config
 Page({

@@ -1,18 +1,18 @@
 //将item状态保存为对象
 let newTabs = {
   state: {},
-  defaultColor:"#333",
-  activeColor:"#ff4422",
-  init: function(item) {
-    this.state["fyTab-"+item.key]={
+  defaultColor: "#333",
+  activeColor: "#ff4422",
+  init: function (item) {
+    this.state["fyTab-" + item.key] = {
       active: false,
       activeColor: this.defaultColor,
-      sort:item.sort?"desc":''
+      sort: item.sort ? "desc" : ''
     }
   },
   //item状态更新
   updataInfo: function (v, key) {
-    let me=this;
+    let me = this;
     let state = me.state;
     if (!key) {
       for (let i in state) {
@@ -26,13 +26,13 @@ let newTabs = {
   },
   active: function (key) {
     this.updataInfo(false);
-    this.updataInfo(true,key);
-    let sort=this.state["fyTab-" + key].sort
-    if(sort){
+    this.updataInfo(true, key);
+    let sort = this.state["fyTab-" + key].sort
+    if (sort) {
       if (sort == "asc") {
         this.state["fyTab-" + key].sort = "desc";
         return "desc";
-      } else if (sort == "desc"){
+      } else if (sort == "desc") {
         this.state["fyTab-" + key].sort = "asc";
         return "asc";
       }
@@ -40,66 +40,75 @@ let newTabs = {
   }
 };
 Component({
-  properties:{
-    tabs:{
-      type:Array,
-      value:[],
+  properties: {
+    tabs: {
+      type: Array,
+      value: [],
     },
-    key:{
-      type:Array,
-      value:[]
+    key: {
+      type: Array,
+      value: []
     },
-    tabTextActiveColor:{
-      type:String,
-      value:"#ff4422"
+    tabTextActiveColor: {
+      type: String,
+      value: "#ff4422"
     },
     tabTextDefaultColor: {
-      type:String,
-      value:"#333"
+      type: String,
+      value: "#333"
     },
+    //默认
     defaultIndex: {
-      type:String,
-      value:""
+      type: String,
     }
   },
   data: {
-    _index:"",
-    _tabs:{}
+    _index: "",
+    _tabs: {}
   },
-  attached: function(d) {
+  attached: function (d) {
     //初始化item状态对象
-    let tabs=this.data.tabs;
+    let tabs = this.data.tabs;
     let tabTextDeColor = this.data.tabTextDefaultColor;
     newTabs.activeColor = this.data.tabTextActiveColor;
     newTabs.defaultColor = this.data.tabTextDefaultColor;
-    tabs.forEach((item)=>{
+    tabs.forEach((item) => {
       newTabs.init(item)
     })
     this.setData({
-      _tabs:newTabs
+      _tabs: newTabs
     })
   },
-  methods: {
-    tabChange: function(e) {
-    console.log(e)
-    let key = e.currentTarget.dataset.key;
-    let _tabs=this.data._tabs;
-    if(newTabs.state["fyTab-"+key].sort){
-      this.triggerEvent("tabChange", { key: key,sort:newTabs.active(key) });   
-    }else{
-      if (this.data._index !== key) {
-        this.triggerEvent("tabChange", { key: key});
-        newTabs.active(key);
-      }
+  ready () {
+    let defaultIndex = this.data.defaultIndex
+    if (defaultIndex) {
+      this._change(defaultIndex)
     }
-     //更新item状态
-     this.setData({
-       _tabs: newTabs
-     })
-     //缓存当前的item
+  },
+  methods: {
+    //跟新tab状态
+    _change(key) {
+      let _tabs = this.data._tabs;
+      if (newTabs.state["fyTab-" + key].sort) {
+        this.triggerEvent("tabChange", { key: key, sort: newTabs.active(key) });
+      } else {
+        if (this.data._index !== key) {
+          this.triggerEvent("tabChange", { key: key });
+          newTabs.active(key);
+        }
+      }
+      //更新item状态
+      this.setData({
+        _tabs: newTabs
+      })
+      //缓存当前的item
       this.setData({
         _index: key
       })
+    },
+    tabChange: function (e) {
+      let key = e.currentTarget.dataset.key;
+      this._change(key)
     }
   }
 })

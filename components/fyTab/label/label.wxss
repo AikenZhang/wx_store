@@ -1,6 +1,0 @@
-.fy-tab-label{
-  font-size:14px;
-  padding:15rpx 0;
-  text-align: center;
-  flex:1
-}

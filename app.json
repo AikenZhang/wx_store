@@ -1,7 +1,8 @@
 {
   "pages":[
-        "pages/goodSort/goodSort",
+    
     "pages/index/index",
+    "pages/goodSort/goodSort",
     "pages/order/index",
     "pages/user/user",
     "pages/logion/logion",

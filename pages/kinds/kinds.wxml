@@ -1,6 +1,6 @@
 <scroll-view style='height:100%;' enable-back-to-top scroll-y>
   <view class='fy-kinds'>
-    <view wx:for="{{kinds}}" wx:key="{{item.key}}" class='fy-kinds-item' data-key="{{item.key}}">
+    <view wx:for="{{kinds}}" wx:key="{{item.key}}" class='fy-kinds-item' data-type="{{item.key}}" bind:tap="navto">
         <span class="iconfont fy-kinds-font {{item.icon}}"></span>
         <span>{{item.value}}</span>
     </view>

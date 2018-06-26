@@ -1,4 +1,6 @@
+const { request } = require('../../utils/MiniPro.js')
 const app=getApp();
+let types = ''
 Page({
 
   /**
@@ -10,9 +12,35 @@ Page({
       { title: '热度', key: '02',sort:true },
       { title: '价格', key: '03',sort:true},
     ],
-    goods:app.globalData.imgList
+    goodsInfo:[],
+    types:''
+  },
+  onLoad (options) {
+    console.log(options)
+     this.setData({
+       types: options.type
+     })
   },
   tabChange: function(e) {
-    
+  
+    let detail = e.detail
+    let me = this
+    let types = this.data.types
+    request({
+      url:"product/type/getprodsort",
+      data:{
+        param: JSON.stringify({
+          type: types,
+          key: detail.key,
+          sort: detail.sort
+        })
+      }
+    }).then((result) =>{
+        if(result && result.code == '0') {
+          me.setData({
+            goodsInfo:result.data
+          })
+        }
+    })
   }
 })
