@@ -1,9 +1,10 @@
 <view class="fy-cell">
-  <view class="fy-cell-icon">
-    <slot name="icon"></slot>
+  <view class="fy-cell-left">
+    <view wx:if="{{icon}}" class='iconfont fy-cell-icon {{icon}}'></view>
+    <view class='fy-cell-title'>{{title}}</view>
   </view>
-  <view class='fy-cell-navto'>
-    <slot name="fyCellType"></slot>
+  <view class='fy-cell-right'>
+    <view class='fy-cell-der'>{{description}}</view>
     <view class='fy-cell-arrow' wx:if="{{arrow}}">
       <span class="iconfont icon-jiantouyou"></span>
     </view>

@@ -1,81 +1,79 @@
-const formatTime = date => {
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const hour = date.getHours()
-  const minute = date.getMinutes()
-  const second = date.getSeconds()
+const { request } = require('./MiniPro.js')
+const Paging = function ({url,page,pageSize,param}) {
 
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+  this._isloading = true
+  this._page = page || 1
+  this._pageSize = pageSize || 10,
+  this._url = url
+  this._param = param
+  this._beforeLoad = ''
+  this._afterLoad = ''
+  this._endLoad = ''
 }
-
-const formatNumber = n => {
-  n = n.toString()
-  return n[1] ? n : '0' + n
+Paging.prototype.beforeLoad = function(callback){
+    if(callback) {
+      console.log('beforeLoad')
+     this._beforeLoad = callback
+    }
 }
+Paging.prototype.load = function (Page, PageSize) {
+  console.log('load')
+  let me = this
+  let page = Page || me._page
+  let pageSize = PageSize || me._pageSize
+  return new Promise((resolve, rej) => {
+    console.log(me._param)
+    if (me._isloading) {
+      //加载之前
+      if (me._beforeLoad) {
+        me._beforeLoad()
+      }
+      request({
+        url: me._url,
+        data: {
+          param: JSON.stringify({
+            ...me._param,
+            page,
+            pageSize
+          })
+        }
+      }).then((result) => {
+        if (result && result.code == '0') {
+          //加载成功之后
+          if (me._afterLoad) {
+            me._afterLoad()
+          }
+          if (result.data && result.data.length > 0) {
+            resolve(result.data)
+          }
+          else {
+            me._isloading = false
+            if (me._endLoad) {
+              me._endLoad()
+            }
+          }
 
-class Touches {
-  constructor() {
-
-  }
-
-  _getIndex(e) {  // 获取滑动列表的下标值
-    return e.currentTarget.dataset.index
-  }
-
-  _getMoveX(e, startX) {  // 获取滑动过程中滑动的距离
-    return this.getClientX(e) - startX
-  }
-
-  _getEndX(e, startX) {  // 获取滑动结束滑动的距离
-    let touch = e.changedTouches
-    if (touch.length === 1) {
-      return touch[0].clientX - startX
+        } 
+      })
     }
+  })
+}
+Paging.prototype.afterLoad = function (callback) {
+  if (callback) {
+    this._afterLoad = callback
   }
-
-  _resetData(dataList) {  // 重置数据， 把所有的列表 left 置为 0
-    for (let i in dataList) {
-      dataList[i].left = 0
-    }
-    return dataList
+}
+Paging.prototype.endLoad = function (callback) {
+  if (callback) {
+    this._endLoad = callback
   }
-
-  getClientX(e) {  // 获取滑动的横坐标
-    let touch = e.touches
-    if (touch.length === 1) {
-      return touch[0].clientX
-    }
-  }
-
-  touchM(e, dataList, startX) {  // touchmove 过程中更新列表数据
-    let list = this._resetData(dataList)
-    list[this._getIndex(e)].left = this._getMoveX(e, startX)
-    return list
-  }
-
-  touchE(e, dataList, startX, width) {  // touchend 更新列表数据
-    let list = this._resetData(dataList)
-    let disX = this._getEndX(e, startX)
-    let left = 0
-
-    if (disX < 0) {  // 判断滑动方向， （向左滑动）
-      // 滑动的距离大于删除宽度的一半就显示操作列表 否则不显示
-      Math.abs(disX) > width / 2 ? left = -width : left = 0
-    } else {  // 向右滑动复位
-      left = 0
-    }
-
-    list[this._getIndex(e)].left = left
-    return list
-  }
-
-  deleteItem(e, dataList) {  // 删除功能
-    dataList.splice(this._getIndex(e), 1)
-    return dataList
-  }
+} 
+Paging.prototype.setParam = function (param) {
+    this._param = param 
+}
+Paging.prototype.setLoading = function (b) {
+  this._isloading = b
 }
 module.exports = {
-  formatTime: formatTime,
-  touch:new Touches()
+  Paging
 }

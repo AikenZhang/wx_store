@@ -57,3 +57,6 @@
   color:#fff;
   font-size:14px;
 }
+.fy-cell {
+  margin-top:10rpx;
+}

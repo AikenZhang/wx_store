@@ -1,32 +1,24 @@
-@import "../../app.wxss";
+@import '../../app.wxss';
 .fy-cell{
   display: flex;
   min-height: 85rpx;
   background: #fff;
-  margin:10rpx 0;
+  border-bottom: 1rpx solid #f2f2f2;
   justify-content: space-between;
   align-items: center;
 }
-.fy-cell-icon{
-  padding: 0 15rpx;
-  color:#333;
-  font-size:13px;
-}
-.fy-cell-navto{
-
-  padding: 0 15rpx;
-  color:#333;
-  font-size:13px;
-}
-.fy-cell-navto{
-  display: flex;
+.fy-cell-left,.fy-cell-right {
   font-size:14px;
-  color:#666;
+  color: #f981a7;
+  display: flex;
+  padding: 15rpx;
 }
-.fy-cell-arrow{
-  padding: 0 15rpx;
-  font-size:13px;
+.fy-cell-title {
+  color:#333;
+  font-weight: 500;
+  padding:0 10rpx;
 }
-.fy-cell-arrow span{
-  font-size:12px;
+.fy-cell-der{
+  color:#888;
+  padding:0 15rpx;
 }

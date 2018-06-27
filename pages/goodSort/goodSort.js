@@ -1,6 +1,14 @@
 const { request } = require('../../utils/MiniPro.js')
+const { Paging } = require('../../utils/util.js')
+const paging = new Paging({
+  url:'product/type/getprodsort'
+})
 const app=getApp();
 let types = ''
+let sort = ''
+let key = ''
+let page = 1
+let pageSize = 10
 Page({
 
   /**
@@ -13,34 +21,54 @@ Page({
       { title: '价格', key: '03',sort:true},
     ],
     goodsInfo:[],
-    types:''
+    _loadImg:false
   },
   onLoad (options) {
     console.log(options)
-     this.setData({
-       types: options.type
-     })
+     types = options.type
   },
   tabChange: function(e) {
-  
     let detail = e.detail
+    page = 1
+    sort = detail.sort
+    key = detail.key
     let me = this
-    let types = this.data.types
-    request({
-      url:"product/type/getprodsort",
-      data:{
-        param: JSON.stringify({
-          type: types,
-          key: detail.key,
-          sort: detail.sort
+    paging.setParam({
+      type:types,
+      key:key,
+      sort: sort
+    })
+    paging.setLoading(true)
+    paging.load(1).then((data) => {
+     me.setData({
+       goodsInfo: data
+     })
+    })
+  },
+  loadDate () {
+    let me =this
+    page++
+    paging.setParam({
+      type: types,
+      key: key,
+      sort:sort
+    })
+    paging.beforeLoad(() => {
+        me.setData({
+          _loadImg:true
         })
-      }
-    }).then((result) =>{
-        if(result && result.code == '0') {
-          me.setData({
-            goodsInfo:result.data
-          })
-        }
+    })
+    paging.afterLoad(() => {
+      console.log("after")
+      me.setData({
+        _loadImg: false
+      })
+    })
+    paging.load(page).then((data) => {
+      me.setData({
+        goodsInfo: data
+      })
     })
   }
+
 })

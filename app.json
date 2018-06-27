@@ -1,10 +1,10 @@
 {
   "pages":[
-    
+    "pages/user/user",
     "pages/index/index",
     "pages/goodSort/goodSort",
     "pages/order/index",
-    "pages/user/user",
+    
     "pages/logion/logion",
     "pages/goods/goods",
     "pages/user/userInfo/userInfo",

@@ -5,4 +5,4 @@ const config = {
   imgPreSrc:'http://fashion.zhangguangh.cn/',
   imgError:''
 }
-module.exports=config
+module.exports= config

@@ -34,9 +34,9 @@ Page({
     request({
       url: "product/product/getprolist",
       data: {
-        param:{
+        param:JSON.stringify({
           prodId: prodId
-        }
+        })
       }
     }).then((result) => {
       if (result.code == '0') {

@@ -1,17 +1,10 @@
 //index.js
 //获取应用实例
 const { request } = require('../../utils/MiniPro.js')
-const req = (page) => {
-  return request({
-    url: "product/product/getprolist",
-    data: {
-      param: {
-        page,
-        pageSize: 10
-      }
-    }
-  })
-}
+const { Paging } = require('../../utils/util.js')
+const paging = new Paging({
+  url: 'product/product/getprolist'
+})
 const app = getApp()
 Page({
   data: {
@@ -21,50 +14,31 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     goods: [],
     _page: 1,
-    _isLoading: true,
     _loadImg: false
   },
   onLoad: function () {
     let me = this
-    req(1).then((result) => {
-      if (result && result.code == '0') {
-        let data = result.data
-        me.setData({
-          goods: data
-        })
-      }
+    paging.load(1).then((data) => {
+      me.setData({
+        goods: data
+      })
     })
   },
   //分页加载
   loadDate: function () {
     let me = this
     let data = this.data
-    if (data._isLoading) {
+    let page = data._page + 1
+    paging.load(page).then((result) => {
+      let goods = data.goods
+      console.log(goods)
+      goods.push(...result)
+      console.log(goods)
       me.setData({
-        _isLoading: false,
-        _loadImg: true
+        _page:page,
+        goods: goods
       })
-      let page = data._page + 1
-      me.setData({
-        _page: page
-      })
-      req(page).then((result) => {
-        if (result && result.code == '0') {
-          if (result.data.length > 0) {
-            let goods = data.goods
-            goods.push(...result.data)
-            console.log(goods)
-            me.setData({
-              _isLoading: true,
-              goods: goods
-            })
-          }
-        }
-        me.setData({
-          _loadImg:false
-        })
-      })
-    }
+    })
   },
   onPullDownRefresh: function () {
     console.log("sdsd");
@@ -76,8 +50,5 @@ Page({
       fail: function (res) { },
       complete: function (res) { },
     })
-  },
-  scroll: function (e) {
-    //console.log(e)
   }
 })

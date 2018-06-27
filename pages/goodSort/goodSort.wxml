@@ -1,6 +1,9 @@
-<view>
-   <fy-tab bind:tabChange="tabChange" tabs="{{tabs}}" defaultIndex="01"></fy-tab>
-   <view class='goods-container'>
-       <img-content class="img-content" bindtap="naTo" wx:for="{{goodsInfo}}" wx:key="item.id" goodInfo="{{item}}"></img-content>
-   </view>
+<view class='fy-goodsort'>
+  <fy-tab bind:tabChange="tabChange" tabs="{{tabs}}" class="fy-tab" defaultIndex="01"></fy-tab>
+  <scroll-view enable-back-to-top scroll-y bindscrolltolower="loadDate" style='height:92%;'>
+    <view class='goods-container'>
+      <img-content class="img-content" bindtap="naTo" wx:for="{{goodsInfo}}" wx:key="item.id" goodInfo="{{item}}"></img-content>
+    </view>
+    <load-more wx:if="{{_loadImg}}"></load-more>
+  </scroll-view>
 </view>

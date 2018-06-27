@@ -6,6 +6,18 @@ Component({
     arrow: {
       type:Boolean,
       value: true
+    },
+    icon:{
+      type:String,
+      value:''
+    },
+    title:{
+      type:String,
+      value:''
+    },
+    description:{
+      type:String,
+      value:''
     }
   }
 })

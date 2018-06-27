@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "fy-tab":"../../components/fyTab/fyTab",
-    "img-content": "../../components/imgContent/imgContent"
+    "img-content": "../../components/imgContent/imgContent",
+    "load-more":"../../components/fyLoadMore/index"
   }
 }

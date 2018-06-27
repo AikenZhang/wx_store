@@ -29,8 +29,9 @@
           <span>全部订单</span>
       </view>
    </view>
-   <fy-cell>
-      <view slot="icon">我的地址</view>
-      <view slot="fyCellType">详细资料</view>
-   </fy-cell>
+   <view class='fy-cell'>
+      <fy-cell icon="icon-dingwei"  title="收货地址"></fy-cell>
+      <fy-cell icon="icon-kefu"  title="联系客服"></fy-cell>
+   </view>  
+   
 </view>
