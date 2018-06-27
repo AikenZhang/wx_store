@@ -8,40 +8,20 @@ const paging = new Paging({
 const app = getApp()
 Page({
   data: {
-    motto: '欢迎进入FASHION衣妆',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    goods: [],
-    _page: 1,
-    _loadImg: false
+    goodsInfo: []
   },
-  onLoad: function () {
+  loadData(e) {
+    console.log(e)
     let me = this
-    paging.load(1).then((data) => {
-      me.setData({
-        goods: data
-      })
+    let data = e.detail
+    let temp = me.data.goodsInfo
+    temp.push(...data)
+    me.setData({
+      goodsInfo: temp
     })
   },
-  //分页加载
-  loadDate: function () {
-    let me = this
-    let data = this.data
-    let page = data._page + 1
-    paging.load(page).then((result) => {
-      let goods = data.goods
-      console.log(goods)
-      goods.push(...result)
-      console.log(goods)
-      me.setData({
-        _page:page,
-        goods: goods
-      })
-    })
-  },
-  onPullDownRefresh: function () {
-    console.log("sdsd");
+  onLoad () {
+    this.selectComponent("#paging").init()
   },
   naTo: function (e) {
     wx.navigateTo({

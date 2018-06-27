@@ -1,5 +1,7 @@
 {
   "usingComponents":{
-    "fy-cell": "../../../components/fyCell/fyCell"
+    "fy-cell": "../../../components/fyCell/fyCell",
+    "load-more": "../../components/fyLoadMore/index",
+    "abnor":"../../components/abnor/index"
   }
 }

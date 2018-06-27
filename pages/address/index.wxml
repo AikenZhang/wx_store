@@ -1,0 +1,13 @@
+<view class="fy-address">
+  <view class='fy-address-item' wx:for="{{userInfo}}" wx:key="{{index}}">
+    <view>
+      <view class='fy-address-userInfo'>
+        {{item.name + " " + item.tel}}
+      </view>
+      <view class='fy-address-content'>{{item.address}}</view>
+      <view wx:if="{{item.default == '1'}}" class="fy-address-default">默认地址</view>
+    </view>
+    <view class="iconfont icon-bianji">
+    </view>
+  </view>
+</view>

@@ -9,6 +9,7 @@ const Paging = function ({url,page,pageSize,param}) {
   this._beforeLoad = ''
   this._afterLoad = ''
   this._endLoad = ''
+  this._isNull = ''
 }
 Paging.prototype.beforeLoad = function(callback){
     if(callback) {
@@ -52,7 +53,11 @@ Paging.prototype.load = function (Page, PageSize) {
               me._endLoad()
             }
           }
-
+          if (page == 1 && result.data.length == 0) {
+            if (me._isNull) {
+              me._isNull()
+            }
+          }
         } 
       })
     }
@@ -69,10 +74,17 @@ Paging.prototype.endLoad = function (callback) {
   }
 } 
 Paging.prototype.setParam = function (param) {
+  console.log(param)
     this._param = param 
 }
 Paging.prototype.setLoading = function (b) {
   this._isloading = b
+}
+//当数据为空时执行
+Paging.prototype.setNull = function (callback) {
+  if (callback) {
+    this._isNull = callback
+  }
 }
 module.exports = {
   Paging

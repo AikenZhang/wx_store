@@ -1,9 +1,8 @@
 <view class='fy-goodsort'>
   <fy-tab bind:tabChange="tabChange" tabs="{{tabs}}" class="fy-tab" defaultIndex="01"></fy-tab>
-  <scroll-view enable-back-to-top scroll-y bindscrolltolower="loadDate" style='height:92%;'>
+  <paging id="paging" url="product/type/getprodsort" bind:setData="loadData">
     <view class='goods-container'>
-      <img-content class="img-content" bindtap="naTo" wx:for="{{goodsInfo}}" wx:key="item.id" goodInfo="{{item}}"></img-content>
+      <img-content  data-id="{{item.id}}" class="img-content" bindtap="naTo" wx:for="{{goodsInfo}}" wx:key="item.id" goodInfo="{{item}}"></img-content>
     </view>
-    <load-more wx:if="{{_loadImg}}"></load-more>
-  </scroll-view>
+  </paging>
 </view>

@@ -1,0 +1,33 @@
+.fy-address{
+  width:100%;
+  background: #fff;
+}
+.fy-address-item{
+  width:95%;
+  margin: 0 auto;
+  height:150rpx;
+  border-bottom: 1rpx solid #f2f2f2;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #666;
+}
+.fy-address-userInfo {
+  font-size:16px;
+  height:50rpx;
+  line-height: 50rpx;
+  color: #333;
+  font-weight: 600;
+}
+.fy-address-content{
+  font-size:14px;
+  height:40rpx;
+  line-height: 40rpx;
+  color: #666;
+}
+.fy-address-default{
+  height:30rpx;
+  color:#f981a7;
+  font-size:12px;
+}

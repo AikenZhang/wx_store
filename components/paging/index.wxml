@@ -1,4 +1,5 @@
 <scroll-view enable-back-to-top scroll-y bindscrolltolower="loadData" class='fy-page'>
-    <solt name="content"></solt>
-    <load-more wx:if="{{_loadImg}}"></load-more>
-  </scroll-view>
+  <slot></slot>
+  <load-more type="load" wx:if="{{_loadImg}}"></load-more>
+  <load-more type="end" wx:if="{{_end}}"></load-more>
+</scroll-view>

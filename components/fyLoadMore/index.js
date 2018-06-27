@@ -1,37 +1,28 @@
-const { TYPES, IconType } =require('./config.js');
+const types ={
+  load:"fy-spin icon-ai244",
+  end:"icon-xiangxia",
+}
+const text = {
+  load:'加载中...',
+  end:'到底了'
+}
 
 Component({
-  behaviors: [],
   properties: {
-    text: {
-      type: String,
-      value: ''
-    },
-    isEnd: {
-      type: Boolean,
-      value: false
-    },
-    icon: {
-      type: String
+    type:{
+      type:String,
+      value:"load"
     }
   },
-  data: {
-    type: TYPES[Math.floor(Math.random() * TYPES.length)],
-    iconStatus: IconType.HIDDEN,
-    iconType: IconType
+  data:{
+    text:'',
+    icon:''
   },
-  attached() {
-    let iconStatus = IconType.HIDDEN;
-    const icon = this.data.icon;
-    if (icon) {
-      iconStatus = IconType.SHOW_DEFAULT;
-    }
-    if (/\.(jpg|gif|jpeg|png)+$/.test(icon)) {
-      iconStatus = IconType.SHOW_CONFIG;
-    }
+  ready () {
+    let type = this.data.type
     this.setData({
-      iconStatus
-    });
-  },
-  methods: {}
+      icon:types[type],
+      text: text[type]
+    })
+  }
 });

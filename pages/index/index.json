@@ -1,6 +1,7 @@
 {
   "usingComponents":{
     "img-content":"../../components/imgContent/imgContent",
-    "left-slide":"../../components/leftSlide/leftSlide"
+    "left-slide":"../../components/leftSlide/leftSlide",
+    "paging": "../../components/paging/index"
   }
 }

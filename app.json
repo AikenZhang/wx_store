@@ -1,10 +1,12 @@
 {
   "pages":[
+    "pages/address/index",
     "pages/user/user",
+    
+    "pages/address/addressList/index",
     "pages/index/index",
     "pages/goodSort/goodSort",
     "pages/order/index",
-    
     "pages/logion/logion",
     "pages/goods/goods",
     "pages/user/userInfo/userInfo",

@@ -1,11 +1,10 @@
 <!--index.wxml-->
-<view class="container">
-  <scroll-view class='goods-scroll' enable-back-to-top scroll-y  bindscrolltolower="loadDate">
-    <view class="goods-container">
-       <img-content data-id="{{item.id}}" class="img-content" bindtap="naTo" wx:for="{{goods}}" wx:key="{{item.id}}"  goodInfo="{{item}}"></img-content>
+
+<view style='width:100%;height:100%;'>
+  <paging id="paging" url="product/product/getprolist" bind:setData="loadData">
+    <view class='goods-container'>
+      <img-content data-id="{{item.id}}" class="img-content" bindtap="naTo" wx:for="{{goodsInfo}}" wx:key="item.id" goodInfo="{{item}}"></img-content>
     </view>
-    <view wx:if="{{_loadImg}}" class='goods-loadImg'>
-      <span class="fy-spin iconfont icon-ai244"></span>
-    </view>
-  </scroll-view>
+  </paging>
 </view>
+  

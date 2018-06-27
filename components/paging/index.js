@@ -20,9 +20,10 @@ Component({
     }
   },
   data:{
-    _loadImg:false
+    _loadImg:false,
+    _end:false
   },
-  ready () {
+  attached () {
     let url = this.data.url
     paging = new Paging({
       url
@@ -31,6 +32,7 @@ Component({
   methods:{
     //初始化首页
     init (params) {
+      console.log(params)
       let me = this
       param = params
       page = 1
@@ -51,6 +53,11 @@ Component({
       paging.afterLoad(() => {
         me.setData({
           _loadImg: false
+        })
+      })
+      paging.endLoad(() => {
+        me.setData({
+          _end:true
         })
       })
       paging.load(page).then((data) => {
