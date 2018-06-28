@@ -7,7 +7,7 @@
       <view class='fy-address-content'>{{item.address}}</view>
       <view wx:if="{{item.default == '1'}}" class="fy-address-default">默认地址</view>
     </view>
-    <view class="iconfont icon-bianji">
+    <view data-id="{{item._id}}" class="iconfont icon-bianji" bind:tap="nato">
     </view>
   </view>
 </view>

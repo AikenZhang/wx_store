@@ -5,7 +5,7 @@
 .fy-address-item{
   width:95%;
   margin: 0 auto;
-  height:150rpx;
+  height:170rpx;
   border-bottom: 1rpx solid #f2f2f2;
   background: #fff;
   display: flex;
@@ -22,12 +22,12 @@
 }
 .fy-address-content{
   font-size:14px;
-  height:40rpx;
-  line-height: 40rpx;
+  height:70rpx;
+  line-height: 60rpx;
   color: #666;
 }
 .fy-address-default{
-  height:30rpx;
+  height:40rpx;
   color:#f981a7;
   font-size:12px;
 }

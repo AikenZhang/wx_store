@@ -1,9 +1,9 @@
 {
   "pages":[
     "pages/address/index",
-    "pages/user/user",
+    "pages/address/addressEdit/index",
     
-    "pages/address/addressList/index",
+    "pages/user/user",
     "pages/index/index",
     "pages/goodSort/goodSort",
     "pages/order/index",

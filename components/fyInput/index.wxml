@@ -1,0 +1,10 @@
+<view class='fy-input'>
+    <view class='fy-input-icon iconfont {{icon}}' wx:if="{{icon}}"></view>
+    <view class='fy-input-title' wx:if="{{title}}">{{title}}</view>
+    <view class='fy-input-input'>
+      <input placeholder="{{placeholder}}" type="{{type}}" maxlength="{{maxlength}}" bindblur="blur" value="{{value}}"></input>
+    </view>
+    <view class='fy-input-but'>
+      <slot name='fy-but'></slot>
+    </view>
+</view>

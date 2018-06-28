@@ -1,21 +1,21 @@
 const { request } = require('./MiniPro.js')
-const Paging = function ({url,page,pageSize,param}) {
+const Paging = function ({ url, page, pageSize, param }) {
 
   this._isloading = true
   this._page = page || 1
   this._pageSize = pageSize || 10,
-  this._url = url
+    this._url = url
   this._param = param
   this._beforeLoad = ''
   this._afterLoad = ''
   this._endLoad = ''
   this._isNull = ''
 }
-Paging.prototype.beforeLoad = function(callback){
-    if(callback) {
-      console.log('beforeLoad')
-     this._beforeLoad = callback
-    }
+Paging.prototype.beforeLoad = function (callback) {
+  if (callback) {
+    console.log('beforeLoad')
+    this._beforeLoad = callback
+  }
 }
 Paging.prototype.load = function (Page, PageSize) {
   console.log('load')
@@ -58,7 +58,7 @@ Paging.prototype.load = function (Page, PageSize) {
               me._isNull()
             }
           }
-        } 
+        }
       })
     }
   })
@@ -72,10 +72,10 @@ Paging.prototype.endLoad = function (callback) {
   if (callback) {
     this._endLoad = callback
   }
-} 
+}
 Paging.prototype.setParam = function (param) {
   console.log(param)
-    this._param = param 
+  this._param = param
 }
 Paging.prototype.setLoading = function (b) {
   this._isloading = b

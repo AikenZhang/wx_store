@@ -1,0 +1,34 @@
+@import '../../app.wxss';
+.fy-input{
+  width:100%;
+  min-height:80rpx;
+  font-size:14px;
+  display: flex;
+  justify-content: center;
+}
+.fy-input-title{
+  width:150rpx;
+  text-align:left;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size:16px;
+  color:#000;
+  font-weight: 400;
+  padding: 0 10rpx;
+}
+.fy-input-input{
+  flex:1;
+  display: flex;
+  align-items:center;
+  font-size:16px;
+}
+.fy-input-input input {
+  width:100%;
+}
+.fy-input-but{
+  min-width: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#888;
+}
