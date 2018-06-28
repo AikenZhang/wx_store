@@ -11,7 +11,6 @@ Page({
     goodsInfo: []
   },
   loadData(e) {
-    console.log(e)
     let me = this
     let data = e.detail
     let temp = me.data.goodsInfo

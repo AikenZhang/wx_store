@@ -1,10 +1,12 @@
 .fy-user-header{
   width:100%;
-  height:200rpx;
+  height:250rpx;
   background: #fff;
   display: flex;
+  flex-direction: column;
   align-items: center;
   margin-bottom:15rpx;
+  justify-content: center;
 }
 .fy-user-left{
   padding: 0 20rpx;

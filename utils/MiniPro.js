@@ -41,6 +41,7 @@ const request = (option) => {
   }).catch((error) => {
     wx.showToast({
       title: error.message || "网络错误",
+      
     })
   })
 }

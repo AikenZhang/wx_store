@@ -13,17 +13,14 @@ const Paging = function ({ url, page, pageSize, param }) {
 }
 Paging.prototype.beforeLoad = function (callback) {
   if (callback) {
-    console.log('beforeLoad')
     this._beforeLoad = callback
   }
 }
 Paging.prototype.load = function (Page, PageSize) {
-  console.log('load')
   let me = this
   let page = Page || me._page
   let pageSize = PageSize || me._pageSize
   return new Promise((resolve, rej) => {
-    console.log(me._param)
     if (me._isloading) {
       //加载之前
       if (me._beforeLoad) {
@@ -74,7 +71,6 @@ Paging.prototype.endLoad = function (callback) {
   }
 }
 Paging.prototype.setParam = function (param) {
-  console.log(param)
   this._param = param
 }
 Paging.prototype.setLoading = function (b) {

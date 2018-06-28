@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "地址修改",
   "usingComponents":{
     "fy-input":"../../../components/fyInput/index"
   }

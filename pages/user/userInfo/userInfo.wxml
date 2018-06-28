@@ -1,8 +1,0 @@
-<view>
-   <fy-cell bind:tap="click" title="收货地址">
-   </fy-cell>
-   <fy-cell bind:tap="click" title="{{title}}" description="sdfsdf">
-   </fy-cell>
-   <view style='height:7000rpx'></view>
-   <fy-popUps id="ip"></fy-popUps>
-</view>

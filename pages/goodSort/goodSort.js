@@ -3,6 +3,7 @@ const app = getApp();
 let types = ''
 let sort = ''
 let key = ''
+let page = ''
 Page({
 
   /**
@@ -36,7 +37,6 @@ Page({
     })
   },
   loadData (e) {
-    console.log(e)
     let me = this
     let data = e.detail
     let temp = me.data.goodsInfo

@@ -52,7 +52,7 @@ Page({
         let data = result.data
         let defaultAddress = ''
         data.forEach((v,k) =>{
-          if (v.is_default == '1'){
+          if (v.default == '1'){
             defaultAddress = v
           }
         })
@@ -80,11 +80,8 @@ Page({
     }).then((result) => {
       console.log(result)
       if (result && result.code == '0') {
-         wx.showToast({
-           title: '提交成功',
-         })
          wx.showModal({
-           title: '提示',
+           title: '提交成功',
            content: '请到个人中心完成支付',
            success (res) {
              if (res.confirm){
@@ -115,11 +112,13 @@ Page({
   //选择地址
   selectAddress (e) {
     let id = e.currentTarget.dataset.key
+    console.log(id)
     let addressArr = this.data.addressArr
     for (let i = 0; i < addressArr.length;i++) {
-      if (addressArr[i].id == id) {
+      console.log(addressArr[i])
+      if (addressArr[i]._id == id) {
         this.setData({
-          user:addressArr[i]
+          defaultAddress:addressArr[i]
         })
       }
     }

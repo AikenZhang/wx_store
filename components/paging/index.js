@@ -32,7 +32,6 @@ Component({
   methods:{
     //初始化首页
     init (params) {
-      console.log(params)
       let me = this
       param = params
       page = 1

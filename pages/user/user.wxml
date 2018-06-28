@@ -1,12 +1,8 @@
 <view>
    <view class='fy-user-header' wx:if="{{_login}}">
-      <view class='fy-user-left'>
         <image mode='widthFix' src="{{user.img}}" class='fy-user-img'></image>
-      </view>
-      <view class='fy-user-right'>
         <view class='fy-user-name'>{{user.name}}</view>
-        <view class='fy-user-editor' bind:tap="editor">我的资料<span class="iconfont icon-bianji1"></span></view>
-      </view> 
+        <!-- <view class='fy-user-editor' bind:tap="editor">我的资料<span class="iconfont icon-bianji1"></span></view> -->
    </view>
    <view class='fy-user-header' wx:if="{{!_login}}">
        <button class='fy-user-login' open-type='getUserInfo' bindgetuserinfo='getUserInfo'>登录</button>
@@ -30,8 +26,8 @@
       </view>
    </view>
    <view class='fy-cell'>
-      <fy-cell icon="icon-dingwei"  title="收货地址"></fy-cell>
-      <fy-cell icon="icon-kefu"  title="联系客服"></fy-cell>
+      <fy-cell icon="icon-dingwei"  title="收货地址" bind:tap='nato' data-type='address'></fy-cell>
+      <fy-cell icon="icon-kefu"  title="联系客服" bind:tap="nato"></fy-cell>
    </view>  
    
 </view>

@@ -1,22 +1,21 @@
 {
-  "pages":[
+  "pages": [
+    "pages/index/index",
+    "pages/user/userkf/index",
+    "pages/address/addressAdd/index",
     "pages/address/index",
     "pages/address/addressEdit/index",
-    
     "pages/user/user",
-    "pages/index/index",
     "pages/goodSort/goodSort",
     "pages/order/index",
     "pages/logion/logion",
     "pages/goods/goods",
-    "pages/user/userInfo/userInfo",
     "pages/confirmOrder/index",
-
     "pages/shopCar/shopCar",
     "pages/kinds/kinds",
     "pages/home/home"
   ],
-  "window":{
+  "window": {
     "navigationBarBackgroundColor": "#f981a7",
     "navigationBarTextStyle": "#fff",
     "navigationBarTitleText": "FASHION衣妆",
@@ -24,16 +23,16 @@
     "backgroundTextStyle": "light"
   },
   "tabBar": {
-    "color":"#888",
+    "color": "#888",
     "selectedColor": "#ed7098",
-    "backgroundColor":"#f1f2f6",
-    "borderStyle":"white",
+    "backgroundColor": "#f1f2f6",
+    "borderStyle": "white",
     "list": [
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "selectedIconPath":"resouse/img/home_select.png",
-        "iconPath":"resouse/img/home_default.png"
+        "selectedIconPath": "resouse/img/home_select.png",
+        "iconPath": "resouse/img/home_default.png"
       },
       {
         "pagePath": "pages/kinds/kinds",
@@ -46,7 +45,8 @@
         "text": "购物车",
         "selectedIconPath": "resouse/img/shop_select.png",
         "iconPath": "resouse/img/shop_default.png"
-      },{
+      },
+      {
         "pagePath": "pages/user/user",
         "text": "我的",
         "selectedIconPath": "resouse/img/home_select.png",

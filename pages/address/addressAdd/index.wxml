@@ -1,0 +1,22 @@
+<view class='fy-address'>
+  <view class='fy-address-item'>
+       <fy-input value="{{name}}" data-type="name" bind:blur="blur" title="收货人" ></fy-input>
+  </view>
+  <view class='fy-address-item'>
+       <fy-input title="联系电话" data-type="tel" bind:blur="blur" value="{{tel}}"  type="number"></fy-input>
+  </view>
+  <view class='fy-address-item'>
+       <fy-input title="联系地址" value="{{address}}" data-type="address" bind:blur="blur" >
+          <view class='iconfont icon-dingwei' bind:tap="getAddress" slot='fy-but'></view>
+       </fy-input>
+  </view>
+  <view class='fy-address-switch'>
+     <view class='fy-address-seitchtitle'>
+        设置为默认地址
+     </view>
+     <switch checked="{{_default == '1'}}" bind:change="switchChange"  ></switch>
+  </view>
+  <view class='fy-address-but'>
+      <button style='background:#f981a7' bind:tap="submit">确认</button>
+  </view>
+</view>

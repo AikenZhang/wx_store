@@ -31,3 +31,15 @@
   color:#f981a7;
   font-size:12px;
 }
+.fy-address-add {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  color: #f981a7;
+  font-size:16px;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}

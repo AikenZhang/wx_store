@@ -1,0 +1,6 @@
+<view class="fy-kf">
+  <view class='fy-kf-title'>请添加客服微信</view>
+  <view class='fy-kf-img'>
+    <image src="http://fashion.zhangguangh.cn/611558286634384391.jpg" mode='widthFix'></image>
+  </view>
+</view>

@@ -10,4 +10,8 @@
     <view data-id="{{item._id}}" class="iconfont icon-bianji" bind:tap="nato">
     </view>
   </view>
+  <view class='fy-address-add' bind:tap="add">
+    <view class='iconfont icon-jiahao'></view>
+    <text>新增地址</text>
+  </view>
 </view>

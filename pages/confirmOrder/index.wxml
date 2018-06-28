@@ -35,7 +35,7 @@
         <view class="fy-cell-icon">
           <span class="iconfont icon-jiantouyou"></span>
         </view>
-        <view class='fy-cell-navto' data-key="{{item.id}}" bind:tap="selectAddress">
+        <view class='fy-cell-navto' data-key="{{item._id}}" bind:tap="selectAddress">
           <view style="width:100%;">
             <view class='fy-cell-title'>{{item.name+ " "+item.tel}}</view>
             <view class='text-overflow fy-cell-content'>{{item.address}}</view>

@@ -7,9 +7,9 @@ Page({
    */
   data: {
      id:'',
-     name:'1',
-     tel:'2',
-     address:'3',
+     name:'',
+     tel:'',
+     address:'',
      default:'',
      _default:''
   },
@@ -39,7 +39,6 @@ Page({
     })
   },
   blur (e) {
-    console.log(e.detail)
       let type = e.currentTarget.dataset.type
       let data = {}
       data[type] = e.detail
@@ -57,7 +56,6 @@ Page({
   },
   switchChange (e) {
      let me = this
-     console.log(e.detail)
      if (e.detail.value) {
        me.setData({
          default:'1'
