@@ -1,6 +1,7 @@
 {
+  "navigationBarTitleText": "订单确认",
   "usingComponents": {
-    "fy-cell": "../../../components/fyCell/fyCell",
-    "popup": "../../components/popUp/index"
+    "fy-cell": "/components/fyCell/fyCell",
+    "popup": "/components/popUp/index"
   }
 }

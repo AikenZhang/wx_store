@@ -1,6 +1,8 @@
 {
+  "navigationBarTitleText": "个人中心",
   "usingComponents": {
-    "order-item": "../../components/orderItem/orderItem",
-    "popup":"../../components/popUp/index"
+    "order-item": "/components/orderItem/orderItem",
+    "popup":"/components/popUp/index",
+    "paging":"/components/paging/index"
   }
 }

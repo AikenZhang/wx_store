@@ -1,0 +1,8 @@
+.fy-404{
+  width:100%;
+  height:100%;
+  background: #fff;
+}
+.fy-404 image {
+  width: 100%;
+}

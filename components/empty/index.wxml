@@ -1,0 +1,5 @@
+<!--pages/error/empty/index.wxml-->
+<view class='fy-empty'>
+   <image src="{{imgPre+'empty.png'}}" mode='widthFix'></image>
+   <text>没有相关数据</text>
+</view>

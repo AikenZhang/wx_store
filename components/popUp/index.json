@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "wxc-mask": "../mask/index"
+    "wxc-mask": "/components/mask/index"
   },
   "component": true
 }

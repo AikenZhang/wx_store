@@ -1,8 +1,8 @@
 {
   "usingComponents":{
-    "price":"../fyPrice/index",
-    "counter":"../counter/index",
-    "slide-del":"../leftSlide/leftSlide"
+    "price":"/components/fyPrice/index",
+    "counter":"/components/counter/index",
+    "slide-del":"/components/leftSlide/leftSlide"
   },
   "component": true
 }

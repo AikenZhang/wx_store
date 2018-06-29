@@ -13,7 +13,8 @@
     "pages/confirmOrder/index",
     "pages/shopCar/shopCar",
     "pages/kinds/kinds",
-    "pages/home/home"
+    "components/paging/index",
+    "pages/error/404/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f981a7",

@@ -1,6 +1,7 @@
 {
   "component":"true",
   "usingComponents":{
-    "load-more": "../fyLoadMore/index"
+    "load-more": "/components/fyLoadMore/index",
+    "empty":"/components/empty/index"
   }
 }

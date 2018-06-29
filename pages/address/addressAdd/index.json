@@ -1,6 +1,6 @@
 {
   "navigationBarTitleText": "新增地址",
   "usingComponents": {
-    "fy-input": "../../../components/fyInput/index"
+    "fy-input": "/components/fyInput/index"
   }
 }

@@ -21,7 +21,8 @@ Component({
   },
   data:{
     _loadImg:false,
-    _end:false
+    _end:false,
+    _empty:false
   },
   attached () {
     let url = this.data.url
@@ -37,6 +38,11 @@ Component({
       page = 1
       paging.setParam(param)
       paging.setLoading(true)
+      paging.endLoad(() => {
+        me.setData({
+          _empty: true
+        })
+      })
       paging.load(1).then((data) => {
          me.triggerEvent('setData',data)
       })
@@ -55,9 +61,9 @@ Component({
         })
       })
       paging.endLoad(() => {
-        me.setData({
-          _end:true
-        })
+          me.setData({
+            _end: true
+          })
       })
       paging.load(page).then((data) => {
         me.triggerEvent('setData',data)

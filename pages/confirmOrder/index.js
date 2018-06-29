@@ -8,8 +8,8 @@ Page({
    */
   data: {
     defaultAddress:{
-      name:'',
-      tel:'',
+      name:"",
+      tel:"",
       address:''
     },
     goodInfo:[],
@@ -50,7 +50,11 @@ Page({
       if (result && result.code == '0') {
         //提取默认信息
         let data = result.data
-        let defaultAddress = ''
+        let defaultAddress = {
+          name:"",
+          tel:"",
+          address:''
+        }
         data.forEach((v,k) =>{
           if (v.default == '1'){
             defaultAddress = v
@@ -65,6 +69,13 @@ Page({
   },
   submit () {
     let userInfo = this.data.defaultAddress
+    if (userInfo.name == '') {
+      wx.showToast({
+        title: '地址不能为空',
+        icon:'none'
+      })
+      return;
+    }
     request({
       url: 'product/order/addorder',
       data: {

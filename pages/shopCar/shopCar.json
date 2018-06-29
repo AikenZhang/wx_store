@@ -1,7 +1,7 @@
 {
   "navigationBarTitleText":"购物车",
   "usingComponents": {
-    "shopcar-item": "../../components/shopCarItem/shopCarItem",
-    "price":"../../components/fyPrice/index"
+    "shopcar-item": "/components/shopCarItem/shopCarItem",
+    "price":"/components/fyPrice/index"
   }
 }

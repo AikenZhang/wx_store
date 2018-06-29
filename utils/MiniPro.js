@@ -5,6 +5,10 @@ const getToken = () => {
 //请求数据
 const request = (option) => {
   return new Promise((resolve, rej) => {
+    wx.showLoading({
+      title: '加载中',
+      mask:true
+    })
     wx.request({
       url: appConfig.baseUrl + option.url,
       header: {
@@ -15,11 +19,15 @@ const request = (option) => {
       method: option.method || 'POST',
       success (res) {
         if (res.statusCode == 200) {
+          wx.hideLoading()
           resolve(res.data)
         }
       },
       fail (error) {
-        console.log(error)
+        wx.hideLoading()
+        wx.navigateTo({
+          url: '/pages/error/404/index'
+        })
         rej(error)
       }
     })
@@ -41,7 +49,6 @@ const request = (option) => {
   }).catch((error) => {
     wx.showToast({
       title: error.message || "网络错误",
-      
     })
   })
 }

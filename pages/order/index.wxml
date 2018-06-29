@@ -1,24 +1,27 @@
 <view class='fy-order'>
- <order-item class="fy-order-item" wx:for="{{orderInfo}}" wx:key="{{item._id}}" orderInfo="{{item}}" bind:pay="pay"  mode="{{item.mode}}"></order-item>
- <popup id="pay" animation-mode="center" align="center" locked="true"> 
+  <paging id="paging" url="product/order/getorder" bind:setData="loadData">
+    <order-item class="fy-order-item" wx:for="{{orderInfo}}" wx:key="{{item._id}}" orderInfo="{{item}}" bind:pay="pay" mode="{{item.mode}}"></order-item>
+  </paging>
+
+  <popup id="pay" animation-mode="center" align="center" locked="true">
     <view class='fy-order-pay'>
-        <view  class='fy-order-pay-item' style='justify-content:flex-end;height:40rpx;'>
-          <text bind:tap="close">X</text>
-        </view>
-        <view class='fy-order-pay-item' style='justify-content:center'>
-           <text>请联系商家提供订单号完成支付</text>
-        </view>
-        <view class="fy-order-pay-item">
-          <text>商家微信: {{payInfo.wx}}</text>
-          <text data-value="{{payInfo.wx}}" bind:tap="copy">点击复制</text>
-        </view>
-        <view class='fy-order-pay-img'>
-         <image src="{{imgPre+payInfo.wxQRcode}}" mode="widthFix"></image>
-        </view>
-        <view class='fy-order-pay-item'>
-           <text>订单号: {{payInfo.orderId}}</text>
-           <text data-value="{{payInfo.orderId}}" bind:tap="copy">点击复制</text>
-        </view>
+      <view class='fy-order-pay-item' style='justify-content:flex-end;height:40rpx;'>
+        <text bind:tap="close">X</text>
+      </view>
+      <view class='fy-order-pay-item' style='justify-content:center'>
+        <text>请联系商家提供订单号完成支付</text>
+      </view>
+      <view class="fy-order-pay-item">
+        <text>商家微信: {{payInfo.wx}}</text>
+        <text data-value="{{payInfo.wx}}" bind:tap="copy">点击复制</text>
+      </view>
+      <view class='fy-order-pay-img'>
+        <image src="{{imgPre+payInfo.wxQRcode}}" mode="widthFix"></image>
+      </view>
+      <view class='fy-order-pay-item'>
+        <text>订单号: {{payInfo.orderId}}</text>
+        <text data-value="{{payInfo.orderId}}" bind:tap="copy">点击复制</text>
+      </view>
     </view>
- </popup>
+  </popup>
 </view>

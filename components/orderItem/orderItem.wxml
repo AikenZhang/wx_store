@@ -15,5 +15,4 @@
       <view class='fy-order-but-item fy-order-ok' data-mode="3" bind:tap="but" wx:if="{{mode=='3'}}" >已完成</view>
     </view>
   </view>
-
 </slide-del>

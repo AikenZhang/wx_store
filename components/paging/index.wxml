@@ -2,4 +2,5 @@
   <slot></slot>
   <load-more type="load" wx:if="{{_loadImg}}"></load-more>
   <load-more type="end" wx:if="{{_end}}"></load-more>
+  <empty wx:if="{{_empty}}"></empty>
 </scroll-view>

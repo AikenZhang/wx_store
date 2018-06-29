@@ -45,6 +45,7 @@ Paging.prototype.load = function (Page, PageSize) {
             resolve(result.data)
           }
           else {
+            console.log('empty')
             me._isloading = false
             if (me._endLoad) {
               me._endLoad()

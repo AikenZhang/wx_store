@@ -1,7 +1,8 @@
 {
+  "navigationBarTitleText": "个人中心",
   "usingComponents":{
-    "fy-cell": "../../../components/fyCell/fyCell",
-    "load-more": "../../components/fyLoadMore/index",
-    "abnor":"../../components/abnor/index"
+    "fy-cell": "/components/fyCell/fyCell",
+    "load-more": "/components/fyLoadMore/index",
+    "abnor":"/components/abnor/index"
   }
 }

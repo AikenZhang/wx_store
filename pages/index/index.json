@@ -1,7 +1,7 @@
 {
   "usingComponents":{
-    "img-content":"../../components/imgContent/imgContent",
-    "left-slide":"../../components/leftSlide/leftSlide",
-    "paging": "../../components/paging/index"
+    "img-content":"/components/imgContent/imgContent",
+    "left-slide":"/components/leftSlide/leftSlide",
+    "paging": "/components/paging/index"
   }
 }

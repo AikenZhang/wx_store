@@ -2,7 +2,7 @@
 <view>
   <view class="fy-cell" bind:tap="selectInfo">
     <view class="fy-cell-icon">
-      <span class="iconfont icon-jiantouyou"></span>
+      <span class="iconfont icon-dingwei"></span>
     </view>
     <view class='fy-cell-navto'>
       <view style="width:100%;">

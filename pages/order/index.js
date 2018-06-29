@@ -9,63 +9,60 @@ Page({
     imgPre: config.imgPreSrc,
     orderInfo: [],
     mode: '',
-    payInfo:{
-      wx:'123123123',
-      wxQRcode: '611558286634384391.jpg',
-      orderId: '12312312312312312'
+    payInfo: {
+      wx: '',
+      wxQRcode: '',
+      orderId: ''
     },
   },
-
   onLoad: function (options) {
     let mode = options.mode
+    this.selectComponent("#paging").init({
+      type: mode
+    })
+  },
+  //分页
+  loadData(e) {
+    console.log(1)
     let me = this
-    request({
-      url: 'product/order/getorder',
-      data: {
-        param: JSON.stringify({
-          type: mode
-        })
-      }
-    }).then((result) => {
-      console.log(result.data)
-      if (result && result.code == '0') {
-        me.setData({
-          orderInfo: result.data
-        })
-      }
+    let data = e.detail
+    let temp = me.data.orderInfo
+    temp.push(...data)
+    me.setData({
+      orderInfo: temp
     })
   },
   //删除订单
   del() {
     console.log("sdfdsf")
   },
-  pay (e) {
+  pay(e) {
     let me = this
     let userId = e.detail.userId
     let orderId = e.detail.orderId
     console.log(e)
     request({
-      url:'wx/user/getinfobyuserid',
-      data:{
-        param:JSON.stringify({
+      url: 'wx/user/getinfobyuserid',
+      data: {
+        param: JSON.stringify({
           userId: userId
         })
       }
     }).then((result) => {
       if (result && result.code == '0') {
         me.setData({
-         payInfo:{
-           wx: result.data.wx,
-           wxQRcode: result.data.wxQRcode,
-           orderId: orderId
-         }
+          payInfo: {
+            wx: result.data.wx,
+            wxQRcode: result.data.wxQRcode,
+            orderId: orderId
+          }
         })
         me.selectComponent("#pay").show()
       }
     })
   },
   //复制信息
-  copy (e) {
+  copy(e) {
     let data = e.currentTarget.dataset.value
     wx.setClipboardData({
       data,
@@ -79,7 +76,7 @@ Page({
     })
   },
   //关闭支付信息
-  close () {
+  close() {
     this.selectComponent("#pay").hide()
   }
 })
