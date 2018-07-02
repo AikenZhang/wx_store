@@ -6,7 +6,6 @@ const sum = (arr) => {
   let theSum = 0
   for(let i =0;i<arr.length;i++){
      theSum += parseInt(arr[i].sum)
-     console.log(arr[i].sum)
   }
   return theSum
 }
@@ -43,7 +42,6 @@ Page({
   },
   //删除操作
   del(e) {
-    console.log(e)
     request({
       url:'product/product/deleteShopCar',
       data: {

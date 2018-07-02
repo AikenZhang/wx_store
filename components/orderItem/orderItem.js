@@ -3,18 +3,7 @@ const { request } = require('../../utils/MiniPro.js')
 Component({
   properties:{
     orderInfo: {
-      type:Object,
-      value:{
-        src:"46c8eca0-7216-11e8-aa92-459b3731610c.jpg",
-        title:"fsdfsdfsd",
-        color:'默认',
-        size:'s',
-        count:7,
-        price:100,
-        prodId:"23",
-        userId:'3243',
-        id:"231423"
-      }
+      type:Object
     },
     mode:{
       type:String,
@@ -67,9 +56,7 @@ Component({
      del () {
        let data = this.data.orderInfo
        this.triggerEvent('delete', {
-         id: data.id,
-         prodId: data.prodId,
-         useId: data.userId
+         id: data._id
        })
      }
     }

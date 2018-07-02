@@ -1,7 +1,6 @@
 {
-  "navigationBarTitleText": "商品信息",
   "usingComponents":{
-    "price": "/components/fyPrice/index",
-    "fy-popUps": "/components/popUps/popUps"
+    "price": "../../components/fyPrice/index",
+    "fy-popUps": "../../components/popUps/popUps"
   }
 }

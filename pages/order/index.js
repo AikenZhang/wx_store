@@ -1,5 +1,6 @@
 const { request } = require('../../utils/MiniPro.js')
 const config = getApp().config
+let mode = ''
 Page({
 
   /**
@@ -16,14 +17,13 @@ Page({
     },
   },
   onLoad: function (options) {
-    let mode = options.mode
+    mode = options.mode
     this.selectComponent("#paging").init({
       type: mode
     })
   },
   //分页
   loadData(e) {
-    console.log(1)
     let me = this
     let data = e.detail
     let temp = me.data.orderInfo
@@ -33,8 +33,24 @@ Page({
     })
   },
   //删除订单
-  del() {
-    console.log("sdfdsf")
+  del(e) {
+    request({
+      url:'product/order/deleteorder',
+      data:{
+        param:JSON.stringify({
+          id:e.detail.id
+        })
+      }
+    }).then((result) =>{
+      if(result && result.code == '0') {
+        this.setData({
+          orderInfo:[]
+        })
+        this.selectComponent("#paging").init({
+          type: mode
+        })
+      }
+    })
   },
   pay(e) {
     let me = this

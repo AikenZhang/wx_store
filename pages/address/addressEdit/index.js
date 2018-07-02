@@ -6,108 +6,83 @@ Page({
    * 页面的初始数据
    */
   data: {
-     id:'',
-     name:'',
-     tel:'',
-     address:'',
-     default:'',
-     _default:''
+    id: '',
+    name: '',
+    tel: '',
+    address: '',
+    default: '',
+    _default: ''
   },
-  onLoad (options) {
+  onLoad(options) {
     let id = options.id
     this.setData({
       id
     })
     request({
-      url:'wx/user/getaddressById',
-      data:{
-        param:JSON.stringify({
+      url: 'wx/user/getaddressById',
+      data: {
+        param: JSON.stringify({
           id
         })
       }
-    }).then((result) =>{
+    }).then((result) => {
       if (result && result.code == '0') {
         let data = result.data
         this.setData({
-          name:data.name,
-          tel:data.tel,
-          address:data.address,
-          default:data.default,
-          _default:data.default
+          name: data.name,
+          tel: data.tel,
+          address: data.address,
+          default: data.default,
+          _default: data.default
         })
       }
     })
   },
-  blur (e) {
-      let type = e.currentTarget.dataset.type
-      let data = {}
-      data[type] = e.detail
-      this.setData(data)
+  blur(e) {
+    let type = e.currentTarget.dataset.type
+    let data = {}
+    data[type] = e.detail
+    this.setData(data)
   },
-  getAddress () {
+  getAddress() {
     let me = this
     wx.chooseLocation({
-      success (res) {
+      success(res) {
         me.setData({
-          address:res.address
+          address: res.address
         })
       }
     })
   },
-  switchChange (e) {
-     let me = this
-     if (e.detail.value) {
-       me.setData({
-         default:'1'
-       })
-     }else{
-       me.setData({
-         default:'0'
-       })
-     }
+  switchChange(e) {
+    let me = this
+    if (e.detail.value) {
+      me.setData({
+        default: '1'
+      })
+    } else {
+      me.setData({
+        default: '0'
+      })
+    }
   },
-  submit () {
+  submit() {
     let data = this.data
     request({
-      url:'wx/user/updateaddress',
-      data:{
-        param:JSON.stringify({
-           id:data.id,
-           name:data.name,
-           tel:data.tel,
-           address:data.address,
-           default:data.default
-        })
-      }
-    }).then((result) => {
-       if (result && result.code == '0') {
-           wx.showToast({
-             title: '修改成功',
-             icon: 'success',
-             success () {
-               setTimeout(() =>{
-                 wx.switchTab({
-                   url: "/pages/user/user",
-                 })
-               },1500)
-             }
-           })
-       }
-    })
-  },
-  delete () {
-    let data = this.data
-    request({
-      url: 'wx/user/deleteaddress',
+      url: 'wx/user/updateaddress',
       data: {
         param: JSON.stringify({
-          id: data.id
+          id: data.id,
+          name: data.name,
+          tel: data.tel,
+          address: data.address,
+          default: data.default
         })
       }
     }).then((result) => {
       if (result && result.code == '0') {
         wx.showToast({
-          title: '删除成功',
+          title: '修改成功',
           icon: 'success',
           success() {
             setTimeout(() => {
@@ -119,5 +94,39 @@ Page({
         })
       }
     })
+  },
+  delete() {
+    let data = this.data
+    wx.showModal({
+      title: '提示',
+      content: '确认删除？',
+      success(result) {
+        if (result.confirm) {
+          request({
+            url: 'wx/user/deleteaddress',
+            data: {
+              param: JSON.stringify({
+                id: data.id
+              })
+            }
+          }).then((result) => {
+            if (result && result.code == '0') {
+              wx.showToast({
+                title: '删除成功',
+                icon: 'success',
+                success() {
+                  setTimeout(() => {
+                    wx.switchTab({
+                      url: "/pages/user/user",
+                    })
+                  }, 1500)
+                }
+              })
+            }
+          })
+        }
+      }
+    })
+
   }
 })

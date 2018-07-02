@@ -14,14 +14,14 @@
   color: #666;
 }
 .fy-address-userInfo {
-  font-size:16px;
+  font-size:14px;
   height:50rpx;
   line-height: 50rpx;
   color: #333;
   font-weight: 600;
 }
 .fy-address-content{
-  font-size:14px;
+  font-size:12px;
   height:70rpx;
   line-height: 60rpx;
   color: #666;
@@ -29,7 +29,7 @@
 .fy-address-default{
   height:40rpx;
   color:#f981a7;
-  font-size:12px;
+  font-size:10px;
 }
 .fy-address-add {
   display: flex;
@@ -38,7 +38,7 @@
   width: 100%;
   height: 100rpx;
   color: #f981a7;
-  font-size:16px;
+  font-size:14px;
   justify-content: center;
   align-items: center;
   background: #fff;

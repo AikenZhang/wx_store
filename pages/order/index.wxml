@@ -1,6 +1,6 @@
 <view class='fy-order'>
   <paging id="paging" url="product/order/getorder" bind:setData="loadData">
-    <order-item class="fy-order-item" wx:for="{{orderInfo}}" wx:key="{{item._id}}" orderInfo="{{item}}" bind:pay="pay" mode="{{item.mode}}"></order-item>
+    <order-item class="fy-order-item" wx:for="{{orderInfo}}" wx:key="{{item._id}}" orderInfo="{{item}}" bind:delete="del" bind:pay="pay" mode="{{item.mode}}"></order-item>
   </paging>
 
   <popup id="pay" animation-mode="center" align="center" locked="true">

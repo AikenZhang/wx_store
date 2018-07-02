@@ -36,6 +36,10 @@ Component({
       let me = this
       param = params
       page = 1
+      this.setData({
+        _loadImg: false,
+        _end: false
+      })
       paging.setParam(param)
       paging.setLoading(true)
       paging.endLoad(() => {

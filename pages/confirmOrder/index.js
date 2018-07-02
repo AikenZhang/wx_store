@@ -7,13 +7,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    defaultAddress:{
-      name:"",
-      tel:"",
-      address:''
+    defaultAddress: {
+      name: "",
+      tel: "",
+      address: ''
     },
-    goodInfo:[],
-    addressArr:[]
+    goodInfo: [],
+    addressArr: []
   },
 
   /**
@@ -24,14 +24,14 @@ Page({
     temp = options.temp.split(',')
     //获取订单信息
     request({
-      url:'product/product/getshopcarbyid',
-      data:{
-        param:JSON.stringify({
+      url: 'product/product/getshopcarbyid',
+      data: {
+        param: JSON.stringify({
           idArr: temp
         })
       }
     }).then((result) => {
-      if(result && result.code == '0') {
+      if (result && result.code == '0') {
         let sum = 0
         let data = result.data
         data.forEach((v, k) => {
@@ -39,7 +39,7 @@ Page({
         })
         this.setData({
           sum,
-          goodInfo:data
+          goodInfo: data
         })
       }
     })
@@ -51,85 +51,94 @@ Page({
         //提取默认信息
         let data = result.data
         let defaultAddress = {
-          name:"",
-          tel:"",
-          address:''
+          name: "",
+          tel: "",
+          address: ''
         }
-        data.forEach((v,k) =>{
-          if (v.default == '1'){
+        data.forEach((v, k) => {
+          if (v.default == '1') {
             defaultAddress = v
           }
         })
         me.setData({
-          addressArr:data,
+          addressArr: data,
           defaultAddress
         })
       }
     })
   },
-  submit () {
+  submit() {
     let userInfo = this.data.defaultAddress
     if (userInfo.name == '') {
       wx.showToast({
         title: '地址不能为空',
-        icon:'none'
+        icon: 'none'
       })
       return;
     }
     request({
       url: 'product/order/addorder',
       data: {
-        param:JSON.stringify({
-          prodArr:temp,
-          userInfo:{
+        param: JSON.stringify({
+          prodArr: temp,
+          userInfo: {
             address: userInfo.address,
             tel: userInfo.tel,
-            name:userInfo.name
+            name: userInfo.name
           }
         })
       }
     }).then((result) => {
       console.log(result)
       if (result && result.code == '0') {
-         wx.showModal({
-           title: '提交成功',
-           content: '请到个人中心完成支付',
-           success (res) {
-             if (res.confirm){
-               wx.reLaunch({
-                 url: '/pages/user/user'
-               })
-             } else if (res.cancel) {
-               wx.reLaunch({
-                 url: '/pages/index/index'
-               })
-             }
-           }
-         })
+        wx.showModal({
+          title: '提交成功',
+          content: '请到个人中心完成支付',
+          success(res) {
+            if (res.confirm) {
+              wx.reLaunch({
+                url: '/pages/user/user'
+              })
+            } else if (res.cancel) {
+              wx.reLaunch({
+                url: '/pages/index/index'
+              })
+            }
+          }
+        })
       } else if (result && result.code == '0') {
         wx.showModal({
-          title:'提示',
+          title: '提示',
           content: result.errMsg + '库存不足',
-          showCancel:false
+          showCancel: false
         })
       }
     })
   },
   //选择信息
-  selectInfo () {
+  selectInfo() {
+    if (this.data.addressArr.length == 0) {
+
+      wx.showToast({
+        title: '请在个人中心添加收货地址！',
+        icon: 'none'
+      })
+      return
+    }
+
     let me = this
     this.selectComponent('#popup').show()
   },
   //选择地址
-  selectAddress (e) {
+  selectAddress(e) {
     let id = e.currentTarget.dataset.key
     console.log(id)
     let addressArr = this.data.addressArr
-    for (let i = 0; i < addressArr.length;i++) {
+    for (let i = 0; i < addressArr.length; i++) {
       console.log(addressArr[i])
       if (addressArr[i]._id == id) {
         this.setData({
-          defaultAddress:addressArr[i]
+          defaultAddress: addressArr[i]
         })
       }
     }

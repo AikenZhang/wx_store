@@ -15,10 +15,10 @@ Page({
     }
     return {
       title: 'FASHION衣妆',
-      path: 'pages/kinds/kinds',
+      path: 'pages/goods/goods?id=' + prodId,
       success: function (res) {
         wx.showToast({
-          title: '成功',
+          title: '分享成功',
           icon: 'success',
           duration: 2000
         })
@@ -39,7 +39,7 @@ Page({
         })
       }
     }).then((result) => {
-      if (result.code == '0') {
+      if (result && result.code == '0') {
         let data = result.data
         me.setData({
           productInfo:data[0]

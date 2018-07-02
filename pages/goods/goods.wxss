@@ -90,7 +90,7 @@ button[plain]{
   z-index: 9;
   display: flex;
   justify-content: space-between;
-  font-size:13px;
+  font-size:10px;
 }
 .fy-goods-shopcar{
   display: flex;
