@@ -18,6 +18,19 @@ Component({
     description:{
       type:String,
       value:''
+    },
+    navtoUrl:{
+      type:String
+    }
+  },
+  methods:{
+    navto () {
+      let navtoUrl = this.data.navtoUrl
+      if (navtoUrl) {
+        wx.navigateTo({
+          url: navtoUrl,
+        })
+      }
     }
   }
 })

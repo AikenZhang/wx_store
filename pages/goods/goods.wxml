@@ -23,15 +23,15 @@
     <image wx:for="{{productInfo.files}}" wx:key="{{item.id}}" mode="widthFix" src='{{imgPre + item.src}}'></image>
   </view>
   <view class='fy-goods-shop'>
-    <view style='display:flex;'>
+    <view style='display:flex;align-items:center;height:100%;'>
       <view class='fy-goods-shopcar' bind:tap="toShopCar">
-        <span class="iconfont icon-gouwuche"></span>
-        <span>购物车</span>
+        <text class="iconfont icon-gouwuche"></text>
+        <text>购物车</text>
       </view>
       <view class='fy-goods-shopcar' bind:tap="toCollect">
-        <span wx:if="{{!_collect}}" class="iconfont icon-xingxing1" style="font-size:19px;"></span>
-        <span wx:if="{{_collect}}" class="iconfont icon-xingxing" style="color:#F7DC6F;font-size:19px;"></span>
-        <span>收藏</span>
+        <text wx:if="{{!_collect}}" class="iconfont icon-xingxing1" style="font-size:19px;"></text>
+        <text wx:if="{{_collect}}" class="iconfont icon-xingxing" style="color:#F7DC6F;font-size:19px;"></text>
+        <text>收藏</text>
       </view>
     </view>
     <view class="fy-goods-shop-buy" bind:tap="modelShow">

@@ -1,0 +1,37 @@
+/* pages/user/collect/index.wxss */
+.fy-collect-slide{
+  width:100%;
+  height:300rpx;
+  margin-bottom: 2rpx;
+}
+.fy-collect{
+  width: 100%;
+  height: 300rpx;
+  display: flex;
+  border-bottom: 1rpx solid #f2f2f2;
+  align-items: center;
+  font-size:12px;
+}
+.fy-collect-left{
+ padding:0 10rpx; 
+}
+.fy-collect-left image{
+  width:200rpx;
+}
+.fy-collect-right{
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+}
+.fy-collect-title{
+  font-size:13px;
+  color:#333;
+  font-weight: 600;
+  height:50rpx;
+  padding: 0 10rpx;
+}
+.fy-collect-des{
+  font-size:11px;
+  color: #888;
+  padding: 0 10rpx;
+}

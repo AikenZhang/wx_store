@@ -48,7 +48,7 @@ Page({
     })
     //获取收藏信息
     request({
-      url:"product/product/getCollect",
+      url:"product/product/getCollectbyid",
       data:{
         param:JSON.stringify({
           id:prodId

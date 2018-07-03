@@ -7,7 +7,7 @@ let newTabs = {
     this.state["fyTab-" + item.key] = {
       active: false,
       activeColor: this.defaultColor,
-      sort: item.sort ? "desc" : ''
+      sort: item.sort ? 1 : ''
     }
   },
   //item状态更新
@@ -29,12 +29,12 @@ let newTabs = {
     this.updataInfo(true, key);
     let sort = this.state["fyTab-" + key].sort
     if (sort) {
-      if (sort == "asc") {
-        this.state["fyTab-" + key].sort = "desc";
-        return "desc";
-      } else if (sort == "desc") {
-        this.state["fyTab-" + key].sort = "asc";
-        return "asc";
+      if (sort == 1) {
+        this.state["fyTab-" + key].sort = -1;
+        return -1;
+      } else if (sort == -1) {
+        this.state["fyTab-" + key].sort = 1;
+        return 1;
       }
     }
   }

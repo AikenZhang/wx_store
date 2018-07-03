@@ -1,4 +1,4 @@
-<view class="fy-cell">
+<view class="fy-cell" bind:tap="navto">
   <view class="fy-cell-left">
     <view wx:if="{{icon}}" class='iconfont fy-cell-icon {{icon}}'></view>
     <view class='fy-cell-title'>{{title}}</view>

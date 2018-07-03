@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "paging": "/components/paging/index",
+    "slide-del": "/components/leftSlide/leftSlide"
+  }
+}

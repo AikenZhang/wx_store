@@ -79,16 +79,20 @@ Page({
       complete: function (res) { },
     })
   },
-  nato (e) {
-    let type = e.currentTarget.dataset.type
-    if (type == 'address') {
-      wx.navigateTo({
-        url: '/pages/address/index',
-      })
-    }else {
-      wx.navigateTo({
-        url: '/pages/user/userkf/index',
-      })
-    }
+  loginout () {
+    wx.showModal({
+      title: '提示',
+      content: '确认退出?',
+      success (result) {
+        if (result.confirm) {
+          wx.clearStorage('token')
+          //模拟刷新当前页面
+          wx.reLaunch({
+            url: 'user'
+          })
+        } 
+      }
+    })
+   
   }
 })

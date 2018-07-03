@@ -24,7 +24,8 @@
   content: " ";
   position: absolute;
   height: 100%;
-  right: 0;
+  top:0;
+  right:0;
   border-right: 1rpx solid #e2e2e2;
 }
 .fy-kinds-item::before{

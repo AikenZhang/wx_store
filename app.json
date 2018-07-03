@@ -1,6 +1,8 @@
 {
   "pages": [
+        
     "pages/index/index",
+    "pages/user/collect/index",
     "pages/user/userkf/index",
     "pages/address/addressAdd/index",
     "pages/address/index",
@@ -13,6 +15,7 @@
     "pages/confirmOrder/index",
     "pages/shopCar/shopCar",
     "pages/kinds/kinds",
+
     "components/paging/index",
     "pages/error/404/index"
   ],

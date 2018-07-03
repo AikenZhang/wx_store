@@ -4,8 +4,8 @@
       {{item.title}}
     </view>
     <view class='fy-tab-item-jt' wx:if="{{item.sort}}">
-      <span class="iconfont icon-jiantoushang1"  style='color:{{_tabs.state["fyTab-"+item.key].sort=="asc"?"":_tabs.defaultColor }}'></span>
-      <span class="iconfont icon-jiantouxia" style='color:{{_tabs.state["fyTab-"+item.key].sort=="desc"?"":_tabs.defaultColor }}'></span>
+      <span class="iconfont icon-jiantoushang1"  style='color:{{_tabs.state["fyTab-"+item.key].sort==1?"":_tabs.defaultColor }}'></span>
+      <span class="iconfont icon-jiantouxia" style='color:{{_tabs.state["fyTab-"+item.key].sort==-1?"":_tabs.defaultColor }}'></span>
     </view>
   </view>
 </view>

@@ -1,0 +1,22 @@
+<!--pages/user/collect/index.wxml-->
+<view style='width:100%;height:100%;background:#fff;'>
+  <paging id="paging" url='wx/user/getcollect' bind:setData="loadData">
+    <view class='fy-collect-slide' wx:for="{{collectInfo}}" wx:key="index">
+      <slide-del bind:delete="del" data-id="{{item.id}}">
+        <view class='fy-collect'>
+          <view class='fy-collect-left'>
+            <image src="{{imgPre+item.productInfo[0].files[0].src}}" mode="widthFix"></image>
+          </view>
+          <view class='fy-collect-right'>
+            <view class='fy-collect-title'>
+              <text>{{item.productInfo[0].title}}</text>
+            </view>
+            <view class='fy-collect-des'>
+              <text>{{item.productInfo[0].introduction}}</text>
+            </view>
+          </view>
+        </view>
+      </slide-del>
+    </view>
+  </paging>
+</view>

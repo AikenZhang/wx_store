@@ -26,8 +26,11 @@
       </view>
    </view>
    <view class='fy-cell'>
-      <fy-cell icon="icon-dingwei"  title="收货地址" bind:tap='nato' data-type='address'></fy-cell>
-      <fy-cell icon="icon-kefu"  title="联系客服" bind:tap="nato"></fy-cell>
+      <fy-cell icon="icon-dingwei"  title="收货地址" navtoUrl="/pages/address/index"></fy-cell>
+      <fy-cell icon="icon-xingxing"  title="我的收藏" navtoUrl="/pages/user/collect/index"></fy-cell>
+       <fy-cell icon="icon-kefu"  title="联系客服" navtoUrl="/pages/user/userkf/index"></fy-cell>
    </view>  
-   
+   <view class="fy-loginout" bind:tap="loginout">
+      <text>退出登录</text>
+   </view>
 </view>
