@@ -21,7 +21,7 @@
           <selectCom content="{{goodInfo.size}}" bind:select="selectSize"></selectCom>
           <view class='.fy-goodsize-content-title'>数量</view>
           <view class='fy-goodsize-counter'>
-              <counter max="{{maxCount}}" bind:changenumber="selectCount"></counter>
+              <counter max="{{maxCount}}"  bind:changenumber="selectCount"></counter>
           </view>
       </scroll-view>      
       <view class='fy-goodsize-button' data-id="{{goodInfo.id}}" bind:tap="selected">确定</view>

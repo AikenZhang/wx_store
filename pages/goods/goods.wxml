@@ -38,6 +38,9 @@
       <text>加入购物车</text>
     </view>
   </view>
+  <view class='fy-goods-share' style='bottom:300rpx;text-align:center;font-weight:700' bind:tap="navto">
+     <span class="iconfont icon-shouye"></span>
+  </view>
   <button class='fy-goods-share' open-type="share">
     <span class="iconfont icon-msnui-share"></span>
   </button>

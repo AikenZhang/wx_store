@@ -1,6 +1,18 @@
 const { request } = require('../../utils/MiniPro.js')
 const config = getApp().config
 let mode = ''
+const formData = (data) => {
+  data.forEach((item,index) =>{
+    if (item.is_pay == '0' && item.is_vaild == '0' && item.is_ship == '0' && item.is_end == '0') {
+      item["mode"] = 1
+    } else if (item.is_pay == '1' && item.is_ship == '1' && item.is_vaild == '0' && item.is_end == '0') {
+      item["mode"] = 2
+    } else if (item.is_pay == '1' && item.is_ship == '1' && item.is_vaild == '0' && item.is_end == '1') {
+      item["mode"] = 3
+    }
+  })
+  return data
+}
 Page({
 
   /**
@@ -10,11 +22,7 @@ Page({
     imgPre: config.imgPreSrc,
     orderInfo: [],
     mode: '',
-    payInfo: {
-      wx: '',
-      wxQRcode: '',
-      orderId: ''
-    },
+    payInfo: {},
   },
   onLoad: function (options) {
     mode = options.mode
@@ -25,7 +33,8 @@ Page({
   //分页
   loadData(e) {
     let me = this
-    let data = e.detail
+    let data = formData(e.detail)
+    console.log(data)
     let temp = me.data.orderInfo
     temp.push(...data)
     me.setData({

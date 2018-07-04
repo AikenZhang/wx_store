@@ -19,6 +19,7 @@ Component({
        let orderInfo = this.data.orderInfo
        let data = this.data
        let mode = data.mode
+       let id = orderInfo._id
        console.log(mode)
        //支付操作
        if (mode == '1') {
@@ -34,10 +35,10 @@ Component({
            success(e) {
              if (e.confirm) {
                request({
-                 url: "wx/user/receiptOrder",
+                 url: "product/order/receiptOrder",
                  data: {
                    param: JSON.stringify({
-                     _id
+                     id
                    })
                  }
                }).then((result) => {

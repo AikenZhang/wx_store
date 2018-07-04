@@ -1,7 +1,7 @@
 <!--pages/user/collect/index.wxml-->
 <view style='width:100%;height:100%;background:#fff;'>
   <paging id="paging" url='wx/user/getcollect' bind:setData="loadData">
-    <view class='fy-collect-slide' wx:for="{{collectInfo}}" wx:key="index">
+    <view class='fy-collect-slide' wx:for="{{collectInfo}}" wx:key="index" data-id="{{item.id}}" bind:tap='navto'>
       <slide-del bind:delete="del" data-id="{{item.id}}">
         <view class='fy-collect'>
           <view class='fy-collect-left'>

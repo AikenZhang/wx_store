@@ -16,7 +16,7 @@
         <text data-value="{{payInfo.wx}}" bind:tap="copy">点击复制</text>
       </view>
       <view class='fy-order-pay-img'>
-        <image src="{{imgPre+payInfo.wxQRcode}}" mode="widthFix"></image>
+         <image wx:if="{{payInfo.wxQRcode}}" src="{{imgPre+payInfo.wxQRcode}}" mode="widthFix"></image> 
       </view>
       <view class='fy-order-pay-item'>
         <text>订单号: {{payInfo.orderId}}</text>

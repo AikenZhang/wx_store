@@ -97,5 +97,10 @@ Page({
         })
       }
     })
+  },
+  navto () {
+    wx.switchTab({
+      url: '/pages/index/index',
+    })
   }
 })

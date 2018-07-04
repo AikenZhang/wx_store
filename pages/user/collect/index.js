@@ -48,5 +48,13 @@ Page({
       }
     })
     console.log(e.currentTarget.dataset)
+  },
+  navto (e) {
+    wx.navigateTo({
+      url: '/pages/goods/goods?id=' + e.currentTarget.dataset.id,
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
   }
 })

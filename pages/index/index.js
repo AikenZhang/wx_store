@@ -24,7 +24,7 @@ Page({
   },
   naTo: function (e) {
     wx.navigateTo({
-      url: '../goods/goods?id=' + e.target.dataset.id,
+      url: '/pages/goods/goods?id=' + e.target.dataset.id,
       success: function (res) { },
       fail: function (res) { },
       complete: function (res) { },
